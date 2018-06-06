@@ -2,64 +2,76 @@
   "roomImage": "Bathroom.svg",
   "nextRoom": "kitchen",
   "targets": [{
-    "Text": ["This is a MOLDY bath tub. It <b>is<\/b> an asthma trigger.", "This is a MOLDY bath tub. It <b>is<\/b> an asthma trigger."],
+    "Text": ["<p style=\"margin-left:45.0pt\"><span style=\"font-size:14px\"><strong>MOLDS<\/strong> are sometimes microscopic (can&rsquo;t be seen with the eye) fungi or spores that live on surfaces. These spores can go into the air and be breathed in.<\/span><\/p>\n\n<p style=\"margin-left:45.0pt\"><span style=\"font-size:14px\">Mold can be an allergy trigger and can cause symptoms to flare for some people with asthma. Mold grows in areas of moisture and high humidity. Common areas are: bathrooms, basements,&nbsp; potted plants, and areas of indoor water leaks. <\/span><span style=\"font-size:14.0pt\"> <\/span><\/p>\n", "<p>&nbsp;<\/p>\n\n<p style=\"margin-left:1.0in\">&nbsp;<\/p>\n\n<ul>\n\t<li><span style=\"font-size:12px\">Fix water leaks<\/span><\/li>\n\t<li><span style=\"font-size:12px\">Open a window, and\/or use a fan<\/span><\/li>\n\t<li><span style=\"font-size:12px\">Keep indoor humidity low, best between 30-50%<\/span><\/li>\n\t<li><span style=\"font-size:12px\">Use hygrometers (found at hardware stores) to measure indoor humidity <\/span><\/li>\n\t<li><span style=\"font-size:12px\">Use dehumidifier <\/span><\/li>\n\t<li><span style=\"font-size:12px\">Limit use of humidifiers or vaporizers as they can cause indoor moisture and mold growth <\/span><\/li>\n\t<li><span style=\"font-size:12px\">Clean and remove mold promptly <\/span><\/li>\n<\/ul>\n\n<p>&nbsp;<\/p>\n"],
     "isTrigger": true,
     "Name": "Mold",
     "totalAnimationFrames": 5,
     "stopAtEnd": true,
-    "thumbScale":"translate(-310,-750) scale(2)"
+    "thumbScale": "translate(-310,-750) scale(2)",
+    "Title": "Mold"
   }, {
     "Name": "Cat",
-    "Text": ["<b>Furry pets<\/b> can trigger an asthma attack. <ul><li>Keep furry pets out of bedrooms.<\/li><br \/><li>Wash furry pets often (in the bathtub).<\/li><\/ul>", "<b>Furry pets<\/b> can trigger an asthma attack. <ul><li>Keep furry pets out of bedrooms.<\/li><br \/><li>Wash furry pets often (in the bathtub).<\/li><\/ul>"],
+    "Text": ["<p><span style=\"font-size:14px\"><strong>FURRY PETS<\/strong> (Ex. Dogs, Cats, Hamsters, Guinea Pigs, and Rabbits) are common pet allergens that can trigger asthma symptoms in some people. <\/span><\/p>\n\n<p><span style=\"font-size:14.0pt\"><span style=\"font-size:14px\">Pet hair and dander, especially cat hair, can fly in the air and land on surfaces throughout the house.<\/span> <\/span><\/p>\n", "<p style=\"margin-left:1.0in\"><span style=\"font-size:14.0pt\">How to avoid - reduce this trigger ?<\/span><\/p>\n\n<ul>\n\t<li><span style=\"font-size:14.0pt\">If allergic to pets, best to remove from home<\/span><\/li>\n\t<li><span style=\"font-size:14.0pt\">Keep furry pets out of bedrooms<\/span><\/li>\n\t<li><span style=\"font-size:14.0pt\">Limit furry pets to one area of home<\/span><\/li>\n\t<li><span style=\"font-size:14.0pt\">Wash furry pets often<\/span><\/li>\n\t<li><span style=\"font-size:14.0pt\">Vacuum home often<\/span><\/li>\n<\/ul>\n"],
     "isTrigger": true,
     "audioFile": "Cat.mp3",
-    "thumbScale":"translate(-219,-410) scale(2)"
+    "thumbScale": "translate(-219,-410) scale(2)"
   }, {
-    "Text": ["<p><strong>Perfume<\/strong> is a Japanese pop girl group from Hiroshima Prefecture, Japan<\/p>\n", "<b>Perfume<\/b> is a Japanese pop girl group from Hiroshima Prefecture, Japan"],
+    "Text": ["<p><span style=\"font-size:14px\"><strong>AEROSOL SPRAYS<\/strong> and strong scents (like perfume, hairspray, and cleaning products) can be an inhaled irritant <\/span><span style=\"font-size:14px\">and trigger asthma symptoms for some people with asthma.&nbsp;<\/span><\/p>\n", "<p style=\"margin-left:1.0in\"><span style=\"font-size:14.0pt\">How to avoid - reduce this trigger ?<\/span><\/p>\n\n<ul>\n\t<li><span style=\"font-size:14.0pt\">Avoid using <\/span><span style=\"font-size:14.0pt\">aerosol sprays indoors<\/span><\/li>\n\t<li><span style=\"font-size:14.0pt\">Avoid products with strong odors<\/span><\/li>\n\t<li><span style=\"font-size:14.0pt\">Avoid use of products that are heavily scented <\/span><\/li>\n\t<li><span style=\"font-size:14.0pt\">Air out the room when sprays are used<\/span><\/li>\n<\/ul>\n"],
     "isTrigger": true,
     "Name": "Perfume",
-    "audioFile": "Spray.mp3",
     "totalAnimationFrames": 4,
-    "thumbScale":"translate(-14600,-3000) scale(11)"
+    "thumbScale": "translate(-14600,-3000) scale(11)"
   }, {
-    "Text": ["<b>hairspray<\/b> is another fun aerosol which can trigger Aesthma symptoms", "<b>hairspray<\/b> is another fun aerosol which can trigger Aesthma symptoms"],
+    "Text": ["<p><span style=\"font-size:14px\"><strong>AEROSOL SPRAYS<\/strong> and strong scents (like perfume, hairspray, and cleaning products) can be an inhaled irritant <\/span><span style=\"font-size:14px\">and trigger asthma symptoms for some people with asthma.&nbsp;<\/span><\/p>\n", "<p style=\"margin-left:1.0in\"><span style=\"font-size:14.0pt\">How to avoid - reduce this trigger ?<\/span><\/p>\n\n<ul>\n\t<li><span style=\"font-size:14.0pt\">Avoid use of <\/span><span style=\"font-size:14.0pt\">aerosol sprays<\/span><\/li>\n\t<li><span style=\"font-size:14.0pt\">Avoid products with strong odors,<\/span><span style=\"font-size:14.0pt\"> Avoid use of products that are heavily scented <\/span><\/li>\n<\/ul>\n"],
     "isTrigger": true,
     "Name": "HairSpray",
     "audioFile": "Spray.mp3",
     "totalAnimationFrames": 4,
-    "thumbScale":"translate(-13400,-2870) scale(11)"
+    "thumbScale": "translate(-13400,-2870) scale(11)"
   }, {
-    "Text": ["<b>Rug<\/b> stays on the floor and can collect mad <b>allergens<\/b>", "<b>Rug<\/b> stays on the floor and can collect mad <b>allergens<\/b>"],
+    "Text": ["<p><span style=\"font-size:14px\"><strong>DUST MITES<\/strong> are found in rugs.&nbsp;<\/span><\/p>\n\n<p><span style=\"font-size:14px\">Dust mites can be an allergy trigger for some people with asthma. <\/span><\/p>\n\n<p><span style=\"font-size:14px\">Dust mites are so tiny they can&rsquo;t be seen with the eye. <\/span><\/p>\n\n<p><span style=\"font-size:14px\">They live in items made of thick fibers, such as<strong> bedding, carpets, pillows, sofas, rugs and stuffed toys.&nbsp; <\/strong><\/span><\/p>\n\n<p><span style=\"font-size:14px\"><strong>Dust mites live and multiply in high humidity. <\/strong><\/span><\/p>\n", "<p><span style=\"font-size:14.0pt\"><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <\/strong>How to avoid -reduce this trigger ?<\/span><\/p>\n\n<p>&nbsp;\n<p style=\"margin-left:47.25pt\"><span style=\"font-size:14.0pt\">- Wash small area rugs often with hot water&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; and dry on high heat<\/span><\/p>\n<\/p>\n\n<p style=\"margin-left:47.25pt\">&nbsp;<\/p>\n"],
     "isTrigger": true,
     "Name": "Rug",
-    "thumbScale":"translate(-100,-890) scale(2)"
+    "thumbScale": "translate(-100,-890) scale(2)"
   }, {
     "Text": ["This Plunger <b>Isn't<\/b> an Asthma Trigger that I know of", "This Plunger <b>Isn't<\/b> an Asthma Trigger that I know of"],
     "Name": "Plunger"
   }, {
-    "Text": ["Chemicals like <b>Clorox<\/b> Bleach can be very dangerous", "Chemicals like <b>Clorox<\/b> Bleach can be very dangerous"],
+    "Text": ["<p>&nbsp;<\/p>\n\n<p><span style=\"font-size:14.0pt\">Fumes from<\/span><strong><span style=\"font-size:14.0pt\"> BLEACH <\/span><\/strong><span style=\"font-size:14.0pt\">and other common cleaning products and detergents can be an inhaled trigger for some people with asthma.<\/span><\/p>\n", "<p><span style=\"font-size:14.0pt\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<\/span><\/p>\n\n<ul>\n\t<li><span style=\"font-size:12px\">Use non-scented household cleaning products<\/span><\/li>\n\t<li><span style=\"font-size:12px\">Avoid cleaning with products that have strong odors<\/span><\/li>\n\t<li><span style=\"font-size:12px\">Clean when the person with asthma is not in the area<\/span><\/li>\n\t<li><span style=\"font-size:12px\">Open windows and doors or use a fan to move the air when cleaning<\/span><\/li>\n\t<li><span style=\"font-size:12px\">Do not use full strength when directions say to dilute product with water<\/span><\/li>\n\t<li><span style=\"font-size:12px\">Air out the room after cleaning<\/span><\/li>\n<\/ul>\n\n<p>&nbsp;<\/p>\n"],
     "isTrigger": true,
     "Name": "Clorox",
-    "thumbScale":"translate(-9900,-5400) scale(6)"
+    "audioFile": "cleanSqueak.mp3",
+    "thumbScale": "translate(-9900,-5400) scale(6)",
+    "Title": "Strong Odors"
   }, {
-    "Text": ["Other Chemicals like <b>Febreze<\/b> air cleaners can actually trigger reactions as well.", "Other Chemicals like <b>Febreze<\/b> air cleaners can actually trigger reactions as well."],
+    "Text": ["<p><span style=\"font-size:14px\"><strong>AEROSOL SPRAYS<\/strong> and strong scents (like perfume, hairspray, and cleaning products) can be an inhaled irritant <\/span><span style=\"font-size:14px\">and trigger asthma symptoms for some people with asthma.&nbsp;<\/span><\/p>\n", "<p style=\"margin-left:1.0in\"><span style=\"font-size:14.0pt\">How to avoid - reduce this trigger ?<\/span><\/p>\n\n<ul>\n\t<li><span style=\"font-size:14.0pt\">Avoid use of aerosol sprays<\/span><\/li>\n\t<li><span style=\"font-size:14.0pt\">Use non-scented household cleaning products <\/span><\/li>\n\t<li><span style=\"font-size:14.0pt\">Avoid cleaning products that have strong odors<\/span><\/li>\n\t<li><span style=\"font-size:14.0pt\">Clean when the person with asthma is not in the area<\/span><\/li>\n\t<li><span style=\"font-size:14.0pt\">Air out the room after cleaning<\/span><\/li>\n<\/ul>\n"],
     "isTrigger": true,
     "Name": "Febreze",
     "audioFile": "Spray.mp3",
-    "thumbScale":"translate(-17400,-7600) scale(11)"
+    "thumbScale": "translate(-17400,-7600) scale(11)"
   }, {
-    "Text": ["Its a sink <\/b> Remember to wash your hands", "Its a sink <\/b> Remember to wash your hands"],
+    "Text": ["<p style=\"margin-left:45.0pt\"><span style=\"font-size:14px\"><strong>MOLDS<\/strong> are sometimes microscopic (can&rsquo;t be seen with the eye) fungi or spores that live on surfaces. These spores can go into the air and be breathed in.<\/span><\/p>\n\n<p style=\"margin-left:45.0pt\"><span style=\"font-size:14px\">Mold can be an allergy trigger and can cause symptoms to flare for some people with asthma. Mold grows in areas of moisture and high humidity. Common areas are: bathrooms, basements,&nbsp; potted plants, and areas of indoor water leaks. <\/span><\/p>\n", "<p>&nbsp;<\/p>\n\n<p style=\"margin-left:1.0in\"><span style=\"font-size:14.0pt\">How to avoid -reduce this trigger ?<\/span><\/p>\n\n<ul>\n\t<li><span style=\"font-size:12px\">Fix water leaks<\/span><\/li>\n\t<li><span style=\"font-size:12px\">Open a window, and\/or use a fan<\/span><\/li>\n\t<li><span style=\"font-size:12px\">Keep indoor humidity low, best between 30-50%<\/span><\/li>\n\t<li><span style=\"font-size:12px\">Use hygrometers (found at hardware stores) to measure indoor humidity <\/span><\/li>\n\t<li><span style=\"font-size:12px\">Use dehumidifier <\/span><\/li>\n\t<li><span style=\"font-size:12px\">Limit use of humidifiers or vaporizers as they can cause indoor moisture and mold growth <\/span><\/li>\n\t<li><span style=\"font-size:12px\">Clean and remove mold promptly <\/span><\/li>\n<\/ul>\n\n<p>&nbsp;<\/p>\n"],
     "isTrigger": true,
-    "Name": "Sink",
-    "totalAnimationFrames": 2,
-    "loopAmount": 2,
-    "thumbScale":"translate(-6990,-3640) scale(7)"
+    "Name": "SinkM",
+    "audioFile": "Waterdrip.mp3",
+    "thumbScale": "translate(-6990,-3640) scale(7)"
   }, {
-    "Text": ["Its a Toilet <\/b> I think the cat was using it", "Its a Toilet <\/b> I think the cat was using it"],
+    "Text": ["<p style=\"margin-left:45.0pt\"><span style=\"font-size:14px\"><strong>MOLDS<\/strong> are sometimes microscopic (can&rsquo;t be seen with the eye) fungi or spores that live on surfaces. These spores can go into the air and be breathed in.<\/span><\/p>\n\n<p style=\"margin-left:45.0pt\"><span style=\"font-size:14px\">Mold can be an allergy trigger and can cause symptoms to flare for some people with asthma. Mold grows in areas of moisture and high humidity. Common areas are: bathrooms, basements,&nbsp; potted plants, and areas of indoor water leaks. <\/span><\/p>\n", "<p>&nbsp;<\/p>\n\n<p style=\"margin-left:1.0in\"><span style=\"font-size:14.0pt\">How to avoid -reduce this trigger ?<\/span><\/p>\n\n<ul>\n\t<li><span style=\"font-size:12px\">Fix water leaks <\/span><\/li>\n\t<li><span style=\"font-size:12px\">Open a window, and\/or use a fan<\/span><\/li>\n\t<li><span style=\"font-size:12px\">Keep indoor humidity low, best between 30-50%<\/span><\/li>\n\t<li><span style=\"font-size:12px\">Use hygrometers (found at hardware stores) to measure indoor humidity <\/span><\/li>\n\t<li><span style=\"font-size:12px\">Use dehumidifier <\/span><\/li>\n\t<li><span style=\"font-size:12px\">Limit use of humidifiers or vaporizers as they can cause indoor moisture and mold growth <\/span><\/li>\n\t<li><span style=\"font-size:12px\">Clean and remove mold promptly <\/span><\/li>\n<\/ul>\n\n<p>&nbsp;<\/p>\n"],
     "isTrigger": true,
     "Name": "Toilet",
     "totalAnimationFrames": 4,
     "audioFile": "Toilet.mp3",
-    "thumbScale":"translate(-6550,-3500) scale(5)"
+    "thumbScale": "translate(-6550,-3500) scale(5)"
+  }, {
+    "Text": ["This is a mirror"],
+    "Name": "Mirror",
+    "audioFile":"cleanSqueak.mp3",
+    "thumbScal": "translate(-6550,-3500) scale(5)"
+  }, {
+    "Text": ["This is some lotion"],
+    "Name": "Lotion"
+  }, {
+    "Text": ["Suffy is a good fish, The Asthma free fish"],
+    "Name": "Suffy"
   }]
 }

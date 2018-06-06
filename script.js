@@ -17,27 +17,35 @@ var bubbleActive = false;
 //var currentRoom;
 var startingWidth, startingHeight, aspect;
 var phaseText = ["Find the Triggers", "Ways to avoid the triggers"];
-
+var thoughtHeaderText = ["TRIGGER:", "How to avoid-reduce this trigger:"];
 var factorTranslate = 1;
 var factorScale = 1;
 var state;
+var tutorialItems = ["#Stool","#Hat","#Carpet"];
+var tutorialItemCount = 0;
+
 
 function loadstate () {
-
+  var dict =getParameters()
+  if (Object.keys(dict).length){
+    localStorage.clear();
+    state={};
+  }
   if (localStorage.hasOwnProperty("state")) {
     state = JSON.parse(localStorage.getItem("state"));
   } else {
     state = {}
   }
-var dict =getParameters()
-if (dict.length){
 
-  state={};
-}
   Object.keys(dict).forEach(function(key) {
 state[key]=dict[key]
 });
-
+ if (!"phase" in dict && dict.length) {
+   state.phase = 0;
+ }
+ if (!"edit" in dict) {
+   state.edit = "false";
+ }
 
 }
 function  getParameterByName()
@@ -77,12 +85,13 @@ $(window).resize(function() {
 
 
 $(function() {
+
   //localStorage.removeItem("state")
   //state.phase = 0;
   $('#phaseNum').html(phaseText[state.phase]);
   state.itemsClicked = state.itemsClicked || [];
   if (!state.hasOwnProperty("currentRoom")) {
-    state.currentRoom = "bedRoom";
+    state.currentRoom = "hallway";
   }
   if (!state.hasOwnProperty("phase")) {
     state.phase = 0;
@@ -115,7 +124,13 @@ $(function() {
 
 
   })
-  resizeScreen();
+
+    $("#closeHome").on("click", function(){
+        console.log("worked")
+        $("#homescreen").animate({
+            opacity: 0
+        }, {duration:1000, complete: function(){$("#homescreen").css("visibility", "hidden")}});
+    })
 });
 
 
@@ -123,11 +138,11 @@ $(function() {
 function resizeScreen() {
   var w = $(window).width();
   var h = $(window).height();
-
+console.log(w,h);
   // If the aspect ratio is greater than or equal to 4:3, fix height and set width based on height
   if ((w / h) >= aspect) {
     stageHeight = h;
-    stageWidth = (aspect) * h;
+    stageWidth = (aspect) * h*1.35;
     stageLeft = (w - stageWidth) / 2;
     stageTop = 0;
   }
@@ -140,7 +155,7 @@ function resizeScreen() {
   }
 
   // Set "screen" object width and height to stageWidth and stageHeight, and center screen
-  $("#screen").css({
+  $("#screen,#homescreen").css({
     width: stageWidth + "px",
     height: stageHeight + "px",
     left: stageLeft + "px",
@@ -158,25 +173,52 @@ function resizeScreen() {
 function loadNewRoom(roomName) {
   totalTriggers = 0;
   state.currentRoom = roomName;
+  console.log(roomName);
   $('#phaseNum').html(phaseText[state.phase]);
   var Dev = "";
   $.getJSON(roomName + Dev + ".json", function(data) {
     nextRoom = data.nextRoom;
-    consolelog(roomName + "what")
+
     clickable = data.targets;
     //$("#room").css("font-size", "100px");
     $("#roomSVG").load("img/rooms/" + data.roomImage, roomSvgLoad);
 
     resizeScreen();
   }).fail(function() {
-    consolelog(roomName + "Dev.json");
+
   })
 }
+function removeHighlightCopy() {
+    // FOR EVERY OBJECT WITH AN ID THAT CONTAINS THE WORD "COPY", REMOVE THE OBJECT
 
+
+    $("[id$='BlurCopy']").remove();
+}
+function highlightComponent(id) {
+  console.log(id);
+    var origPart = $(id);
+    var clonePart = $(id).clone();
+    lastPart = clonePart;
+    clonePart.attr("pointer-events", "none");
+    clonePart.toggleClass("highlightPart");
+    clonePart.attr("id", id.replace("#", "") + "BlurCopy");
+
+    clonePart.attr("filter", "url(#blurMe)");
+    clonePart.attr("transform", $(id).attr("transform"));
+    clonePart.children().attr("fill", "rgba(0,0,0,0)");
+    clonePart.insertBefore($(id));
+    return clonePart;
+}
 
 function roomSvgLoad() {
   //$("#treasureChest").empty();
-
+  var filter = document.createElementNS("http://www.w3.org/2000/svg", "filter");
+        filter.setAttribute("id", "blurMe");
+        var gaussianFilter = document.createElementNS("http://www.w3.org/2000/svg", "feGaussianBlur");
+        gaussianFilter.setAttribute("in", "SourceGraphic");
+        gaussianFilter.setAttribute("stdDeviation", "2");
+        filter.appendChild(gaussianFilter);
+        $('svg').prepend(filter)
   $("#treasureChest").empty();
   $(clickable).each(function(index, value) {
 
@@ -218,7 +260,7 @@ function roomSvgLoad() {
 
       })
 
-
+      console.log(value.Name);
       document.getElementById("cubbySVG_" + value.Name).setAttribute("transform", value.thumbScale || "");
       $('.cubbyCopy').css("width", (100 / totalTriggers) + "%")
       resizeScreen();
@@ -242,7 +284,7 @@ function roomSvgLoad() {
   if (!("triggersLeft" in state)) {
     state.triggersLeft = totalTriggers;
   }
-  console.log(state.triggersLeft, totalTriggers)
+  console.log(state.triggersLeft, totalTriggers,state)
   displayTriggersLeft();
   /*
 	$(".cubbyCopy").css("width", (100/totalTriggers)+"%" )
@@ -255,7 +297,7 @@ function roomSvgLoad() {
 
   makeClickEvents();
 
-  var item = "Intro" || state.itemsClicked ;
+  var item = "Intro";
 
   consolelog(item)
   $('#' + item).trigger('click')
@@ -265,17 +307,19 @@ function roomSvgLoad() {
 
   $('#factorTranslate').val(factorTranslate)
   $('#factorScale').val(factorScale)
+$('body').animate({"opacity":1},1000)
   resizeScreen(); //	For IE
 }
 
 function makeClickEvents() {
 
   $(".clickable").on("click", function(evt) {
-    if (!bubbleActive) {
+    console.log(state.currentRoom);
+    if (!bubbleActive||state.currentRoom=="hallway") {
       bubbleActive = true;
 
 
-      consolelog(evt)
+      console.log(evt)
 
       var clickedItem = evt.currentTarget.id
 
@@ -408,17 +452,25 @@ function thoughts(it) {
     });
 
     function displayThought() {
+      console.log(state.phase );
+      if(state.phase==1){
+        tutorialItemCount=0; //reset
+      }
+      if(tutorialItemCount!=tutorialItems.length){
+      removeHighlightCopy()
+        highlightComponent(tutorialItems[tutorialItemCount++])
+      }
       bubbleActive = true;
       consolelog(it.xValue || 50)
       $("#thoughtBubble").css({
         "left": (it.xValue || 5) + "%",
-        "top": (it.yValue || 5) + "%"
+        "top": (it.yValue || 10) + "%"
       });
       $("#thoughtBubble").addClass("thoughtPop");
       $("#thoughtBubble").css("display", "inline");
 
       if (state.edit== "true") {
-
+        //$('#thoughtHeader').remove();
         $('#thoughtBubble p').html('<form><textarea id=txtArea></textarea> </form>');
 
 
@@ -448,8 +500,13 @@ function thoughts(it) {
 
 
       } else {
+
+        var item=it.Title||it.Name
+
+        $('#thoughtHeaderText').html("&nbsp;"+thoughtHeaderText[state.phase].toUpperCase() + " " + item.toUpperCase())
         $("#thoughtBubble p").html(it.Text[state.phase] + alreadyClickedText)
       }
+
 
     }
 

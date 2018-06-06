@@ -7,7 +7,7 @@
 
 <body>
 <div id="blueprint">
-<img src="/asthma/img/houseMap.svg" alt="Blueprint image" style="width:40%;">
+<img src="/asthmaDev/img/houseMap.svg" alt="Blueprint image" style="width:40%;">
 </div>
 
 <div id="list">
@@ -16,7 +16,7 @@
 
 
 <script type="text/javascript">
-var rooms = ["bedRoom", "livingRoom", "bathRoom", "kitchen"];
+var rooms = ["hallway","bedRoom", "livingRoom", "bathRoom", "kitchen"];
 
 rooms.forEach(function(room){
 		[0,1].forEach(function(phase){
@@ -34,7 +34,7 @@ rooms.forEach(function(room){
 				if (data.targets[i].isTrigger == true){
 
 				var it = data.targets[i].Name;
-				var anchor ="<p><a href='https://apps.tlt.stonybrook.edu/asthma/?edit=true&item=" + it +"&currentRoom=" + room + "&phase="+phase+"&itemsClicked="+   encodeURIComponent(JSON.stringify(itemsClicked))  +"'>" + it +"</a></p>";
+				var anchor ="<p><a href='https://apps.tlt.stonybrook.edu/asthmaDev/?edit=true&item=" + it +"&currentRoom=" + room + "&phase="+phase+"&itemsClicked="+   encodeURIComponent(JSON.stringify(itemsClicked))  +"'>" + it +"</a></p>";
 
 				$("#" + filePrefix).append(anchor);
 itemsClicked.push(it)

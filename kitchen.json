@@ -1,78 +1,94 @@
 {
-  "roomImage": "Kitchen.svg",
-  "targets": [{
-    "Text": ["<p>This is a Ashtray<\/p>\n", "<p>This not is a Ashtray<\/p>"],
-    "isTrigger": true,
-    "Name": "Ashtray",
-    "totalAnimationFrames": 5,
-    "thumbScale":"translate(-7000,-9001) scale(11)"
-  }, {
-    "Text": ["<p>I&#39;M BUGGING OUT MAN?<\/p>\n", "<p>I'M BUGGING OUT MAN?<\/p>"],
-    "isTrigger": true,
-    "Name": "BugSpray",
-    "totalAnimationFrames": 2,
-    "thumbScale":"translate(-5250,-8900) scale(12)"
-  }, {
-    "Name": "Roach",
-    "Text": ["<p>roach?<\/p>", "<p>roach?<\/p>"],
-    "loopAmount": 0,
-    "frameRate": 7,
-    "isTrigger": true,
-    "thumbScale":"translate(-10590,-6500) scale(8)"
-  }, {
-    "Text": ["<p>Candles?<\/p>", "<p>Candles?<\/p>"],
-    "Name": "Candle",
-    "loopAmount": 2,
-    "frameRate": 5
-  }, {
-    "Text": ["<p>rat?<\/p>", "<p>rat?<\/p>"],
-    "loopAmount": 0,
-    "frameRate": 5,
-    "Name": "Rat",
-    "stopAtEnd": true,
-    "audioFile": "Mouse.mp3",
-    "thumbScale":"translate(-1900,-8800) scale(11)"
-  }, {
-    "Name": "Dog",
-    "Text": ["<p>Dog?<\/p>", "<p>Dog?<\/p>"],
-    "loopAmount": 1,
-    "frameRate": 3,
-    "audioFile": "Dog-bark.mp3"
-  }, {
-    "Text": ["<p>Pan?<\/p>", "<p>Pan?<\/p>"],
-    "loopAmount": 0,
-    "frameRate": 3,
-    "isTrigger": true,
-    "Name": "Pan",
-    "stopAtEnd": true,
-    "thumbScale":"translate(-9600,-6200) scale(11)"
-  }, {
-    "Text": ["<p>Stove?<\/p>", "<p>Stove?<\/p>"],
-    "Name": "Stove"
-  }, {
-    "Text": ["<p>Febreze?<\/p>", "<p>Febreze?<\/p>"],
-    "frameRate": 3,
-    "isTrigger": true,
-    "Name": "Febreze",
-    "thumbScale":"translate(-5000,-7450) scale(11)"
-  }, {
-    "Text": ["<p>?dogBowl<\/p>", "<p>?dogBowl<\/p>"],
-    "Name": "dogBowl"
-  }, {
-    "Text": ["<p>?mold<\/p>", "<p>?mold<\/p>"],
-    "isTrigger": true,
-    "Name": "Mold",
-    "thumbScale":"translate(-3400,-1900) scale(3)"
-  }, {
-    "Name": "Garbage",
-    "Text": ["<p> Garbage <\/p>", "<p> Garbage <\/p>"]
-  }, {
-    "Name": "Faucet",
-    "loopAmount": 0,
-    "frameRate": 3,
-    "Text": ["<p> Faucet <\/p>", "<p> Faucet <\/p>"]
-  }, {
-    "Name": "Fridge",
-    "Text": ["<p> Fridge <\/p>", "<p> Fridge <\/p>"]
-  }]
+    "roomImage": "Kitchen.svg",
+    "nextRoom":"frontYard",
+    "targets": [{
+        "Text": ["<p><span style=\"font-size:12px\"><strong>Smoking\/vaping<\/strong> (Tobacco - cigarettes, e-cigarettes, cigars, pipes, other) is unhealthy for everyone, especially people with asthma. It can be an inhaled irritant and trigger asthma for some people.<\/span><\/p>\n\n<ul>\n\t<li><span style=\"font-size:12px\">Smoke\/vapor from tobacco travels through the air and can be found both indoors and outdoors.<\/span><\/li>\n\t<li><span style=\"font-size:12px\">Smoke\/vapor can leave behind the tiniest of particles which can be found on clothes, all household surfaces and car interiors. <\/span><\/li>\n\t<li><span style=\"font-size:12px\">If You Can Smell Smoke\/Vapors, You Can Be BREATHING IN SMOKE\/VAPORS!<\/span><\/li>\n<\/ul>\n\n<p><span style=\"font-size:12px\"><strong>Secondhand smoke\/vapors<\/strong> is the smoke that comes off a burning item such as a cigarette. <\/span><\/p>\n\n<ul>\n\t<li><span style=\"font-size:12px\">They can be breathed in by another person nearby the smoker and vapor. <\/span><\/li>\n\t<li><span style=\"font-size:12px\">They contain nicotine, heavy metals, particles, toxic chemicals and tobacco that can harm the lungs. <\/span><\/li>\n\t<li><span style=\"font-size:12px\">They can trigger asthma symptoms.<\/span><\/li>\n<\/ul>\n\n<p><span style=\"font-size:12px\"><strong>Third hand smoke\/vapors<\/strong> are the tiniest parts (residue) of the smoked\/vaped tobacco cigarette, e-cigarette, cigar or pipe that remains after it has been put out. <\/span><\/p>\n\n<ul>\n\t<li><span style=\"font-size:12px\">They can contain cancer causing substances.<\/span><\/li>\n\t<li><span style=\"font-size:12px\">They can cling to a person&rsquo;s hair, skin, and clothes.<\/span><\/li>\n\t<li><span style=\"font-size:12px\">They can be found on surfaces like furniture, drapes, bedding, carpets, walls, windows and toys. <\/span><\/li>\n\t<li><span style=\"font-size:12px\">They can be found in dust.<\/span><\/li>\n\t<li><span style=\"font-size:12px\">They can be found in the interior of cars.<\/span><\/li>\n<\/ul>\n", "<ul>\n\t<li><span style=\"font-size:14.0pt\">Avoid being near anyone who is smoking <\/span><\/li>\n\t<li><span style=\"font-size:14.0pt\">No smoking indoors, in homes, cars, or wherever the person with asthma may spend time<\/span><\/li>\n\t<li><span style=\"font-size:14.0pt\">Keep all areas free of smoke <\/span><\/li>\n\t<li><span style=\"font-size:14.0pt\">Use cover up clothing, pull back hair, wear a hat while smoking outdoors<\/span><\/li>\n\t<li><span style=\"font-size:14.0pt\">Leave clothes worn while smoking and smell of smoke out of home. <\/span><\/li>\n\t<li><span style=\"font-size:14.0pt\">Change your clothes, wash hands, face &amp; rinse mouth after smoking. <\/span><\/li>\n\t<li>&nbsp;<\/li>\n<\/ul>\n"],
+        "isTrigger": true,
+        "Name": "Ashtray",
+        "totalAnimationFrames": 5,
+        "thumbScale": "translate(-7000,-9001) scale(11)"
+    }, {
+        "Text": ["<p><span style=\"font-size:14.0pt\"><strong>AERSOL SPRAYS<\/strong>, like bug sprays, cleaning products and perfumes can cause strong ordors and fumes. These can be inhaled triggers for some people with asthma.<\/span><\/p>\n", "<p style=\"margin-left:1.0in\"><span style=\"font-size:14.0pt\">How to avoid - reduce this trigger ?<\/span><\/p>\n\n<ul>\n\t<li><span style=\"font-size:14.0pt\">Avoid use of <\/span><span style=\"font-size:14.0pt\">aerosol sprays<\/span><\/li>\n\t<li><span style=\"font-size:14.0pt\">Choose pest control traps instead of sprays when possible<\/span><\/li>\n<\/ul>\n\n<ul>\n\t<li><span style=\"font-size:14.0pt\">Seek assistance of a pest control professional<\/span><\/li>\n\t<li><span style=\"font-size:14.0pt\">If a spray is needed, <\/span><span style=\"font-size:14.0pt\">make sure the person with asthma is outside of the home<\/span><span style=\"font-size:14.0pt\"> or area this spray is used<\/span><\/li>\n\t<li><span style=\"font-size:14.0pt\">Air out home after spraying. <\/span><\/li>\n\t<li><span style=\"font-size:14.0pt\">Make sure you can&#39;t smell the odor<\/span><span style=\"font-size:14.0pt\">&nbsp;<\/span><\/li>\n<\/ul>\n\n<p>&nbsp;<\/p>\n"],
+        "isTrigger": true,
+        "Name": "BugSpray",
+        "totalAnimationFrames": 2,
+        "thumbScale": "translate(-5250,-9500) scale(12)"
+    }, {
+        "Name": "Roach",
+        "Text": ["<p><strong><span style=\"font-size:14.0pt\">PESTS: COCKROACHES<\/span><\/strong><\/p>\n\n<p><span style=\"font-size:14.0pt\">The body parts, saliva and waste of cockroaches are<\/span><span style=\"font-size:14.0pt\"> allergy<\/span><span style=\"font-size:14.0pt\"> triggers<\/span><span style=\"font-size:14.0pt\"> for some people with asthma<\/span><span style=\"font-size:14.0pt\">. <\/span><\/p>\n", "<p style=\"margin-left:1.0in\"><span style=\"font-size:14.0pt\">How to avoid - reduce this trigger ?<\/span><\/p>\n\n<ul>\n\t<li><span style=\"font-size:14.0pt\">Get rid of open food\/water sources (Ex: dog bowls) by keeping foods in sealed containers<\/span><\/li>\n\t<li><span style=\"font-size:14.0pt\">Seal cracks and holes where pests can enter <\/span><\/li>\n\t<li><span style=\"font-size:14.0pt\">Place bait traps in several areas to attract and trap pests<\/span><\/li>\n\t<li><span style=\"font-size:14.0pt\">Use pet- and child-proof bait traps and keep them out of their reach<\/span><\/li>\n<\/ul>\n\n<p>&nbsp;<\/p>\n"],
+        "loopAmount": 0,
+        "frameRate": 7,
+        "isTrigger": true,
+        "thumbScale": "translate(-10590,-6500) scale(8)"
+    }, {
+        "Text": ["<p><span style=\"font-size:14px\"><strong>SMOKE<\/strong><\/span><\/p>\n\n<p><span style=\"font-size:14.0pt\">Smoke<\/span><span style=\"font-size:14.0pt\"> &amp; <\/span><span style=\"font-size:14.0pt\">odors from <\/span><span style=\"font-size:14.0pt\">candles<\/span><span style=\"font-size:14.0pt\"> can<\/span><span style=\"font-size:14.0pt\"> be an asthma trigger for some people.<\/span><\/p>\n", "<p>&nbsp;<\/p>\n\n<ul>\n\t<li><span style=\"font-size:14.0pt\">Avoid use of scented candles<\/span><\/li>\n\t<li><span style=\"font-size:14.0pt\">Avoid or limit use of indoor candles<\/span><\/li>\n\t<li><span style=\"font-size:14.0pt\">Use Electronic Flameless Smokeless Candles<\/span><\/li>\n<\/ul>\n\n<p>&nbsp;<\/p>\n"],
+        "Name": "Candle",
+        "loopAmount": 2,
+        "isTrigger": true,
+        "frameRate": 5,
+        "thumbScale": "translate(-2760,-2900) scale(6)",
+           "Title":"Candle Smoke"
+    }, {
+        "Text": ["<p><strong><span style=\"font-size:14.0pt\">PESTS: RATS<\/span><\/strong><\/p>\n\n<p><span style=\"font-size:14.0pt\">The<\/span><span style=\"font-size:14.0pt\"> skin, saliva or urine of rodents<\/span><span style=\"font-size:14.0pt\"> can be<\/span><span style=\"font-size:14.0pt\"> a<\/span><span style=\"font-size:14.0pt\">n allergy<\/span><span style=\"font-size:14.0pt\"> trigger<\/span><span style=\"font-size:14.0pt\"> for some people with asthma<\/span><span style=\"font-size:14.0pt\">. <\/span><\/p>\n", "<ul>\n\t<li><span style=\"font-size:14.0pt\">Get rid of open food\/water sources (Ex: dog bowls) by keeping foods in sealed containers<\/span><\/li>\n\t<li><span style=\"font-size:14.0pt\">Seal cracks and holes where pests can enter <\/span><\/li>\n\t<li><span style=\"font-size:14.0pt\">Place bait traps in several areas to attract and trap pests <\/span><\/li>\n\t<li><span style=\"font-size:14.0pt\">Use bait traps that are pet- and child-proof and keep them out of their reach<\/span><\/li>\n<\/ul>\n\n<p>&nbsp;<\/p>\n"],
+        "loopAmount": 0,
+        "isTrigger": true,
+        "frameRate": 5,
+        "Name": "Rat",
+        "stopAtEnd": true,
+        "audioFile": "Mouse.mp3",
+        "thumbScale": "translate(-1900,-8800) scale(11)",
+           "Title":"Pests"
+    }, {
+        "Name": "Dog",
+        "Text": ["<p><strong>FURRY PETS<\/strong><\/p>\n\n<p><span style=\"font-size:14px\"><strong>Furry pets<\/strong> are a common allergy trigger and can cause symptoms to flare for some people with asthma. (<strong>EX: Dogs, Cats<\/strong>).<\/span><\/p>\n\n<p><span style=\"font-size:14px\">They can spread allergens in a home on surfaces and in the air.<\/span><\/p>\n", "<p>&nbsp;<\/p>\n\n<ul>\n\t<li><span style=\"font-size:14.0pt\">If allergic to pets, best to remove from home<\/span><\/li>\n\t<li><span style=\"font-size:14.0pt\">Keep furry pets out of bedrooms<\/span><\/li>\n\t<li><span style=\"font-size:14.0pt\">Limit furry pets to one area of home<\/span><\/li>\n\t<li><span style=\"font-size:14.0pt\">Wash furry pets often<\/span><\/li>\n\t<li><span style=\"font-size:14.0pt\">Vacuum home often <\/span><\/li>\n<\/ul>\n"],
+        "loopAmount": 1,
+        "frameRate": 3,
+        "isTrigger": true,
+        "thumbScale": "translate(-3300,-3800) scale(5)",
+        "audioFile": "Dog-bark.mp3"
+    }, {
+        "Text": ["<p>&nbsp;<\/p>\n\n<p><strong><span style=\"font-size:14.0pt\">SMOKE <\/span><\/strong><span style=\"font-size:14.0pt\">from f<\/span><span style=\"font-size:14.0pt\">rying\/cooking <\/span><span style=\"font-size:14.0pt\">on stove can cause strong fumes and odors. These can be a trigger for some people with asthma.<\/span><\/p>\n", "<p style=\"margin-left:1.0in\"><span style=\"font-size:14.0pt\">How to avoid - reduce this trigger ?<\/span><\/p>\n\n<ul>\n\t<li><span style=\"font-size:14.0pt\">Use a <\/span><span style=\"font-size:14.0pt\">stove vent <\/span><span style=\"font-size:14.0pt\">to remove smoke from cooking<\/span><\/li>\n\t<li><span style=\"font-size:14.0pt\">Reduce<\/span><span style=\"font-size:14.0pt\"> or avoid<\/span><span style=\"font-size:14.0pt\"> strong cooking odors, especially from frying<\/span><\/li>\n\t<li><span style=\"font-size:14.0pt\">Air out room well <\/span><\/li>\n\t<li><span style=\"font-size:14.0pt\">Keep person with asthma away from this area<\/span><span style=\"font-size:14.0pt\"> until odors and smoke have cleared<\/span><span style=\"font-size:14.0pt\"> <\/span><\/li>\n<\/ul>\n"],
+        "loopAmount": 0,
+        "frameRate": 3,
+        "isTrigger": true,
+        "Name": "Pan",
+        "stopAtEnd": true,
+        "audioFile": "frypan.mp3",
+        "thumbScale": "translate(-9600,-6200) scale(11)",
+           "Title":"Cooking Smoke"
+    }, {
+        "Text": ["<p>Stove?<\/p>", "<p>Stove?<\/p>"],
+        "Name": "Stove"
+    }, {
+        "Text": ["<p><span style=\"font-size:14.0pt\"><strong>AERSOL SPRAYS<\/strong>, like scented cleaning products, bug sprays and perfumes can cause strong ordors and fumes. These can be inhaled triggers for some people with asthma.<\/span><\/p>\n", "<ul>\n\t<li><span style=\"font-size:14.0pt\">Avoid use of <\/span><span style=\"font-size:14.0pt\">aerosol sprays<\/span><\/li>\n\t<li><span style=\"font-size:14.0pt\">Use non-scented household cleaning products <\/span><\/li>\n\t<li><span style=\"font-size:14.0pt\">Avoid cleaning products that have strong odors<\/span><\/li>\n\t<li><span style=\"font-size:14.0pt\">Clean when the person with asthma is not in the area<\/span><\/li>\n\t<li><span style=\"font-size:14.0pt\">Air out the room after cleaning<\/span><\/li>\n<\/ul>\n"],
+        "frameRate": 3,
+        "isTrigger": true,
+        "Name": "Febreze",
+        "thumbScale": "translate(-5900,-7450) scale(11)"
+    }, {
+        "Text": ["<p>?dogBowl<\/p>", "<p>?dogBowl<\/p>"],
+        "Name": "dogBowl"
+    }, {
+        "Text": ["<p style=\"margin-left:45.0pt\"><span style=\"font-size:12px\"><strong>MOLDS<\/strong> are sometimes microscopic (can&rsquo;t be seen with the eye) fungi or spores. These spores can go into the air and be breathed in. Mold can be an allergy trigger and can cause symptoms to flare for some people with asthma. Mold grows in areas of moisture and high humidity. Common areas are: bathrooms, basements, potted plants, and areas of indoor water leaks.&nbsp; Outdoors, mold is commonly found in soil &amp; leaves. <\/span><\/p>\n", "<p style=\"margin-left:1.0in\"><span style=\"font-size:14.0pt\">How to avoid -reduce this trigger ?<\/span><\/p>\n\n<ul>\n\t<li><span style=\"font-size:12px\">&nbsp;Keep indoor humidity low, best between 30-50%.<\/span><\/li>\n\t<li><span style=\"font-size:12px\">Use hygrometers (found at hardware stores) to measure indoor humidity <\/span><\/li>\n\t<li><span style=\"font-size:12px\">Use dehumidifier <\/span><\/li>\n\t<li><span style=\"font-size:12px\">Limit use of humidifiers or vaporizers as they can cause indoor moisture and mold growth <\/span><\/li>\n\t<li><span style=\"font-size:12px\">Clean and remove mold promptly <\/span><\/li>\n<\/ul>\n"],
+        "isTrigger": true,
+        "Name": "Mold",
+        "thumbScale": "translate(-3400,-1900) scale(3)"
+    }, {
+        "Name": "Garbage",
+        "Text": ["<p> Garbage <\/p>", "<p> Garbage <\/p>"]
+    }, {
+        "Name": "Faucet",
+        "loopAmount": 0,
+        "frameRate": 3,
+        "Text": ["<p> Faucet <\/p>", "<p> Faucet <\/p>"]
+    }, {
+        "Name": "Fridge",
+        "Text": ["<p> Fridge <\/p>", "<p> Fridge <\/p>"]
+    }, {
+        "Text": ["<p>&nbsp;<\/p>\n\n<p><span style=\"font-size:12px\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; The fumes and strong odors from<strong> BLEACH <\/strong>and other common cleaning products and detergents can be an inhaled trigger for some people with asthma.<\/span><\/p>\n", "<p><span style=\"font-size:14.0pt\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; How to avoid &ndash; reduce this trigger?<\/span><\/p>\n\n<ul>\n\t<li><span style=\"font-size:12px\">Use non-scented household cleaning products<\/span><\/li>\n\t<li><span style=\"font-size:12px\">Avoid cleaning with products that have strong odors<\/span><\/li>\n\t<li><span style=\"font-size:12px\">Clean when the person with asthma is not in the area<\/span><\/li>\n\t<li><span style=\"font-size:12px\">Open windows and doors or use a fan to move the air when cleaning<\/span><\/li>\n\t<li><span style=\"font-size:12px\">Do not use full strength when directions say to dilute product with water<\/span><\/li>\n\t<li><span style=\"font-size:12px\">Air out the room after cleaning<\/span><\/li>\n<\/ul>\n\n<p>&nbsp;<\/p>\n"],
+        "isTrigger": true,
+        "Name": "Clorox",
+        "audioFile": "cleanSqueak.mp3",
+        "thumbScale": "translate(-4710,-5150) scale(6)"
+    }]
 }

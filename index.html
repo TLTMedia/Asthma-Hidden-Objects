@@ -2,7 +2,7 @@
 <html>
 
 <head>
-	<script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+	<script src="//code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
 	<script src="audio.js"></script>
 	<script src="script.js"></script>
 	<script src="js/ckeditor/ckeditor.js"></script>
@@ -20,12 +20,16 @@ font-size:20rem;
 </head>
 
 <body>
-<div id="screen">
 
+<div id="screen">
+   <div id="Intro">
+        </div>
 	<div id="roomSVG"></div>
 	<div id="thoughtBubble" class="bubble">
-
-		<span id='close'>x</span>
+<div id="thoughtHeader">
+	<div id="thoughtHeaderText"></div>
+		<div id='close'>x</div>
+	</div>
 		<p>
 
 			"This is a speech bubble."
@@ -49,7 +53,41 @@ font-size:20rem;
 	</svg>
 
 	</div>
-</div>
+    </div>
+    <div id = "homescreen">
+
+        <div id = "bottom">
+             <div id = "bottomRight">
+                <div id = "descriptionTitle">
+                    Welcome to the Asthma Trigger House!
+                </div>
+                <div id = "description">
+                  
+As you go room-to- room, click on common items that you think trigger
+asthma for the people living there. Hint: the number of triggers in each
+room is on the top left. If your click a trigger, it will tell you why it is an
+asthma trigger and disappear. When you have found all of the room&#39;s
+triggers, you will see &quot;0&quot; on the top left and the same room without the
+triggers. Hint: The triggers you found are on the bottom of the room.
+When you click on each trigger, it will tell you ways to avoid or reduce
+exposure to it and go back to its place in the room. When you have clicked
+all of the triggers, click on the door.
+                </div>
+                <button id="closeHome" type="button">
+                    Click here to begin
+                </button>
+                 <div id="dollHouse">
+                     <img src="tree.svg" style="width:100%; height:100%;">
+                     <img src="DollHouseRe.png" style="width:70%;height:100%;">
+                     <img src="tree.svg" style="width:100%; height:100%;">
+                </div>
+            </div>
+
+
+             </div>
+        </div>
+
+
 
 </body>
 

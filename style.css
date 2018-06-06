@@ -1,26 +1,103 @@
 * {
     font-family: "Lucida Sans", sans-serif;
-
+    margin: 0;
+    border: 0;
+    padding: 0;
 }
 
 
 html {
-  font-size: 100%;
+    font-size: 100%;
+    overflow-x: hidden;
 }
 
+body{
+        opacity:0;
+
+}
+
+#homescreen {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #123000;
+    display: flex;
+}
+
+#bottom {
+    align-items: center;
+    flex-direction: column;
+    display: flex;
+
+}
+
+#bottom > div {
+    border-color: aliceblue;
+    margin: 10px;
+    width: 90%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+#bottomRight > div {
+margin-bottom: auto;
+
+}
+
+#descriptionTitle {
+    font-size: 2rem;
+    text-align: center;
+    justify-content: flex-start;
+    color: aliceblue;
+    border-style: solid;
+    border-width: 3px;
+}
+
+#description {
+    font-size: 1rem;
+    color: aliceblue;
+
+}
+#dollHouse > img {
+/*  margin:auto;*/
+  align-self:flex-end;
+
+}
+#dollHouse {
+    display:flex;
+    width:100%;
+    border-bottom-style: solid;
+    border-bottom-width:  3px;
+    border-bottom-color: aliceblue;
+}
+
+#closeHome {
+    background-color: skyblue;
+    opacity: 1;
+    width: 10%;
+    height: 5%;
+    align-self: center;
+    transition-duration: .5s;
+}
+#closeHome:hover{
+    background-color: #ff9966;
+}
 
 #screen {
-	position:absolute;
-	height:100%;
-	width:110%;
-
+    position: relative;
+    height: 150%;
+    width: 110%;
+    margin: 0;
+    border: 0;
+    padding: 0;
 
 }
 
-input[type=range]
-{
-    writing-mode: bt-lr; /* IE */
-    -webkit-appearance: slider-vertical; /* WebKit */
+input[type=range] {
+    writing-mode: bt-lr;
+    /* IE */
+    -webkit-appearance: slider-vertical;
+    /* WebKit */
     width: 8px;
     height: 175px;
     padding: 0 5px;
@@ -30,15 +107,18 @@ input[type=range]
 b {
     color: red;
 }
-.cubbyCopier{
 
-display:none;
+.cubbyCopier {
+
+    display: none;
 
 }
 
-.bubble span,.bubble p{
+.bubble span,
+.bubble p {
 
-font-size: 1rem !important;;
+    font-size: 1rem !important;
+    ;
 
 
 }
@@ -48,7 +128,7 @@ font-size: 1rem !important;;
 
     min-height: 1rem;
     padding: 1rem;
-    margin:1rem;
+    margin: 1rem;
     background: #FFFFFF;
     display: none;
     border: #7F7F7F solid 0.3rem;
@@ -56,6 +136,22 @@ font-size: 1rem !important;;
     -moz-border-radius: 0.3rem;
     border-radius: 1rem;
 
+}
+.highlightPart {
+    animation: pulsate 2s infinite;
+    stroke: rgba(255, 0, 0, 0.55);
+    stroke-width: 8px;
+}
+@keyframes pulsate {
+    0% {
+        opacity: 1
+    }
+    50% {
+        opacity: 0
+    }
+    100% {
+        opacity: 1
+    }
 }
 
 /*.bubble:after {
@@ -82,6 +178,7 @@ font-size: 1rem !important;;
     width: 0;
     z-index: 0;
 }*/
+
 @keyframes thoughtPopKey {
     0% {
         transform: scale(0.0);
@@ -91,6 +188,7 @@ font-size: 1rem !important;;
         transform: scale(1.0);
     }
 }
+
 .thoughtPop {
     animation-name: thoughtPopKey;
     animation-duration: 1s;
@@ -100,60 +198,85 @@ font-size: 1rem !important;;
     animation-fill-mode: forwards;
     animation-delay: 0s;
 }
+
 #roomSVG {
     width: 100%;
     top: 0;
     left: 0;
-		margin:0;
+    margin: 0;
 }
 
 #triggersLeft {
     position: absolute;
-    top:1.25rem;
-    left:2.2rem;
+    top: 1.25rem;
+    left: 2.2rem;
     font-family: "Lucida Sans", sans-serif;
     font-size: 2em;
     color: white;
     padding: 10px;
     background-color: #9EB3EB;
-    border-radius:1px;
+    border-radius: 1px;
     border-color: white;
 }
 
 #phaseNum {
     position: absolute;
-    top:1.25rem;
-    right:.75rem;
+    top: 1.25rem;
+    right: .75rem;
     font-family: "Lucida Sans", sans-serif;
     font-size: 2em;
     color: white;
     padding: 1rem;
     background-color: #9EB3EB;
-    border-radius:5px;
+    border-radius: 5px;
     border-color: white;
 }
 
+#thoughtHeader {
+    display: flex;
+    color: white;
+    background-color: #002966;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+#thoughtHeaderText {
+    flex-grow: 50;
+    border-color: blue;
+    background-color: #002966;
+    font-size: 1.3rem;
+
+}
 
 #close {
-    float: right;
-    display: inline-block;
-    padding: 2px 5px;
-    background: #ccc;
+    align-self: flex-end;
+    top: 0;
+    padding: 10px;
+    background: #002966;
+    font-size: 1.3rem;
+    transition-duration: 0.4s;
+}
+#close:hover{
+  background: #b30000;
 }
 
 #treasureChest {
-  position: absolute;
-  left:10%;
-display: flex;
-width: 80%;
-border:  5px solid yellow;
+    position: absolute;
+    display: flex;
+    width: 80%;
+    border-style: solid;
+    border-width: 10px 7em;
+    border-color: #663300;
+
 }
 
 .cubbyCopy {
-	border: 2px solid blue;
+    border: 2px solid black;
 
 
 }
-#screen{
-position:absolute;
+
+#screen {
+    position: absolute;
 }

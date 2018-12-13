@@ -1,0 +1,98 @@
+{
+  "roomImage": "KitchenDollHouse.svg",
+  "targets": [{
+      "Name": "Ashtray",
+      "postText": "<p>This is a Ashtray</p>",
+      "xValue": 45,
+      "yValue": 20,
+      "isTrigger": true
+    },
+    {
+      "Name": "BugSpray",
+      "postText": "<p>I'M BUGGING OUT MAN?</p>",
+      "xValue": 45,
+      "yValue": 20,
+      "isTrigger": true
+    },
+    {
+      "Name": "Roach",
+      "postText": "<p>roach?</p>",
+      "loopAmount": 0,
+      "frameRate": 7,
+      "xValue": 45,
+      "yValue": 20,
+      "isTrigger": true
+    },
+    {
+      "Name": "Candles",
+      "postText": "<p>Candles?</p>",
+      "xValue": 45,
+      "yValue": 20
+    },
+    {
+      "Name": "Rat",
+      "postText": "<p>rat?</p>",
+      "loopAmount": 0,
+      "frameRate": 5,
+      "stopAtEnd":true,
+      "xValue": 45,
+      "yValue": 20
+    },
+    {
+      "Name": "Dog",
+      "postText": "<p>Dog?</p>",
+      "loopAmount": 1,
+      "frameRate": 3,
+      "xValue": 45,
+      "yValue": 20
+    },
+    {
+      "Name": "Door"
+    },
+    {
+      "Name": "Crack",
+      "postText": "<p>Crack?</p>",
+      "xValue": 45,
+      "yValue": 20,
+      "isTrigger": true
+    },
+    {
+      "Name": "Pan",
+      "postText": "<p>Pan?</p>",
+      "loopAmount": 0,
+      "stopAtEnd": true,
+      "frameRate": 3,
+      "xValue": 45,
+      "yValue": 20,
+      "isTrigger": true
+    },
+    {
+      "Name": "Stove",
+      "postText": "<p>Stove?</p>",
+      "xValue": 45,
+      "yValue": 20
+    },
+    {
+      "Name": "Febreze",
+      "postText": "<p>Febreze?</p>",
+		  "frameRate": 3,
+      "xValue": 45,
+      "yValue": 20,
+      "isTrigger": true
+    },
+    {
+      "Name": "dogBowl",
+      "postText": "<p>?dogBowl</p>",
+      "xValue": 45,
+      "yValue": 20
+    },
+    {
+      "Name": "Mold",
+      "postText": "<p>?mold</p>",
+      "xValue": 45,
+      "yValue": 20,
+      "isTrigger": true
+    }
+
+  ]
+}

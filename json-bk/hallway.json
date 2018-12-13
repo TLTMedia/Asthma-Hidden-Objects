@@ -1,0 +1,23 @@
+{
+  "roomImage": "Hallway.svg",
+  "nextRoom": "bedRoom",
+  "targets": [{
+    "Name": "Stool",
+    "isTrigger": true,
+    "preText": ["Welcome to the ASTHMA Trigger House.\u00a0This is the tutorial that would help you understand the functionalities of this game.Lets start by clicking on the stool to the left", "See that the number on the top left side has lowered? That is the number that shows the number of triggers left. The goal is to reach 0 in each room."],
+    "xValue": "50",
+    "yValue": "50",
+    "postText": ["See that the number on the top left side has lowered? That is the number that shows the number of triggers left. The goal is to reach 0 in each room.", "Nice"],
+    "Text": ["<p>Welcome to the ASTHMA Trigger House.&nbsp;This is the tutorial that would help you understand the functionalities of this game.Lets start by clicking on the stool to the left h<\/p>\n", "<p>Nice er<\/p>\n"]
+  }, {
+    "Name": "Hat",
+    "isTrigger": true,
+    "preText": ["Now click on the hat", "lets get that hat again"],
+    "postText": ["Doing great", "dont worry, new hat"]
+  }, {
+    "Name": "Carpet",
+    "isTrigger": true,
+    "preText": ["Last one, the carpet", "Need to get a new carpet too"],
+    "postText": ["Now that we have reached 0, we will now jump to phase two, where we find ways to get rid of the item and we actually get rid of it", "Now that you have completed the tutorial, you will move on to the rest of the house, have fun!"]
+  }]
+}

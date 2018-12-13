@@ -1,0 +1,98 @@
+{
+  "roomImage": "bedRoom2.svg",
+  "nextRoom": "bedRoom",
+  "targets": [{
+    "Name": "Cat",
+    "postText": "<p><strong>Furry pets (Dog, Cats, Birds, Hamsters, Guinea Pigs, and Rabbits)<\/strong> are a common allergen that can trigger asthma symptoms in some people.<\/p>\n\n<p>Pet hair and dander, especially cat hair, can fly in the air and be deposited on surfaces throughout the house and on items in the home.<\/p>\n",
+    "loopAmount": 3,
+    "audioFile": "Cat.mp3",
+    "xValue": 47,
+    "yValue": 20,
+    "isTrigger": true
+  }, {
+    "Name": "Bed",
+    "postText": "<p><strong>Dust mites<\/strong> live in items made of thick fibers, such as <strong>bedding<\/strong>.<\/p>\n\n<ul>\n\t<li>Cover mattress, pillows, and all bedding with allergy-proof dust mite encasements.<\/li>\n\t<br \/>\n\t<li>Wash and dry all bedding on high heat at least every two weeks<\/li>\n\t<br \/>\n\t<li>Keep humidity level in home under 50%.<\/li>\n<\/ul>\n\n<p>spaghetti<\/p>\n",
+    "xValue": 45,
+    "yValue": 20,
+    "isTrigger": true
+  }, {
+    "Name": "Dresser",
+    "postText": "This is a dresser. It is <b>not<\/b> an asthma trigger. Keep looking!",
+    "xValue": 70,
+    "yValue": 50
+  }, {
+    "Name": "Nightstand",
+    "postText": "This is a nightstand. It is <b>not<\/b> an asthma trigger. Keep looking!",
+    "xValue": 15,
+    "yValue": 40
+  }, {
+    "Name": "Dust",
+    "postText": "<p><strong>House dust <\/strong>is a common allergy trigger for some people with asthma and can cause asthma symptoms or make asthma get worse. House dust contains many tiny particles, some of which can be from pollen, mold, pet dander &amp; hair, dust mites, and pests. Vacuum cleaners contain dust particles and can spread the dust. &nbsp;<\/p>\n\n<p><strong>How to avoid this trigger<\/strong>:<\/p>\n\n<p>&bull; Vacuum when the person with asthma is NOT at home because dust from vacuuming can be spread back into the air.<\/p>\n\n<p>&bull; Use a vacuum cleaner with a high efficiency filter (HEPA filter vacuum) on carpet and fabric-covered furniture to reduce dust build-up and reduce the amount of dust coming out of the vacuum.<\/p>\n\n<p>&bull; Be careful when emptying the dirt from the vacuum cleaner to avoid the collected dust spreading in the air.<\/p>\n\n<p>&bull; Central heating and air conditioning systems may help control dust, change filters often.<\/p>\n\n<p>&bull; Wipe away dust on all surfaces with a damp cloth and vacuum once a week.<\/p>\n\n<p>&bull; Reduce clutter to help reduce dust.<\/p>\n\n<p>&bull; Consider using a HEPA air purifier (AVOID IONIC &amp; OZONE PRODUCING TYPES) if airborne dust is a problem.<\/p>\n",
+    "loopAmount": 0,
+    "frameRate": 3,
+    "xValue": 30,
+    "yValue": 10,
+    "isTrigger": true
+  }, {
+    "Name": "stuffedAnimals",
+    "postText": "<p><strong>Dust mites<\/strong> live in items made of thick fibers, such as <strong>stuffed toys<\/strong>.<\/p>\n\n<ul>\n\t<li>Stuffed toys are a source for dust mites.<\/li>\n\t<br \/>\n\t<li>Reduce or remove stuffed toys from the child&#39;s bedroom.&nbsp;<\/li>\n<\/ul>\n",
+    "audioFile": "Squeak2.mp3",
+    "xValue": 30,
+    "yValue": 20,
+    "isTrigger": true
+  }, {
+    "Name": "Perfume",
+    "postText": "<p>Aerosol Sprays and strong scents (like perfume, hairspray, and cleaning products) can be an inhaled irritant and trigger asthma symptoms for some people with asthma. &nbsp;<\/p>\n\n<p><strong>How to avoid this trigger:<\/strong><\/p>\n\n<p>&bull; Avoid using aerosol sprays indoors<\/p>\n\n<p>&bull; Avoid use of products that are heavily scented<\/p>\n\n<p>&bull; Air out a room where sprays were used<\/p>\n",
+    "totalAnimationFrames": 4,
+    "loopAmount":3,
+    "audioFile": "Spray.mp3",
+    "xValue": 23,
+    "yValue": 18,
+    "isTrigger": true
+  }, {
+    "Name": "Door",
+    "postText": "<b>Please find more triggers before continuing<\/b>"
+  }, {
+    "Name": "Pollen",
+    "postText": "<p><strong>Pollens<\/strong> blowing in from outdoors can be sources of allergens and may trigger asthma symptoms in some people. &nbsp;&nbsp;They can be in the air, outdoors as well as indoors, they can land on household surfaces, car interiors and car exteriors. &nbsp;<\/p>\n\n<p><strong>How to avoid this trigger<\/strong>:<\/p>\n\n<p>&bull; Keep windows closed especially during high pollen days.<\/p>\n\n<p>Pay attention to pollen levels. Check online, TV or sign up for weather &amp; pollen alerts<\/p>\n\n<p>&bull; Do not dry laundry outdoors<\/p>\n\n<p>&bull; Limit time spent outdoors on high pollen days and times. Remove clothing worn outdoors before sitting or lying on indoor furniture &amp; bedroom areas, shower before going to bed. &nbsp;&nbsp;<\/p>\n\n<p>&bull; Wipe away dust on all surfaces with a damp cloth and vacuum once a week. Clean curtains, window treatments, and bedding often dust may contain pollens.<\/p>\n\n<p>&bull; Use a vacuum cleaner with a high efficiency filter (HEPA filter vacuum) to clean pollen dust<\/p>\n\n<p>&bull; Use window filters, or air conditioning, to filter out pollen in the air<\/p>\n\n<p>HEPA&nbsp;filter air purifiers (AVOID IONIC &amp; OZONE PRODUCING TYPES) may help reduce airborne pollens<\/p>\n",
+    "audioFile": "Outside.mp3",
+    "xValue": 25,
+    "yValue": 20
+  }, {
+    "Name": "Carpet",
+    "postText": "<b>Dust mites<\/b> live in items made of thick fibers, such as <b>carpets<\/b> or <b>rugs<\/b>. <ul><li>Avoid use of or remove all carpeting in the home.<\/li><br \/><li>Replace carpeting with flooring that can be <b>damp mopped often<\/b>.<\/li><br \/><li>If you must retain the carpet, use a vacuum cleaner with a high efficiency filter or a central vacuum cleaner.<\/li><\/ul>",
+    "xValue": 25,
+    "yValue": 29,
+    "isTrigger": true
+  }, {
+    "Name": "Ledge",
+    "postText": "This is the window sill. It <b>is<\/b> an asthma trigger, but you're getting warmer!",
+    "xValue": 1,
+    "yValue": 35
+  }, {
+    "Name": "Clock",
+    "postText": "This is an alarm clock. It is <b>not<\/b> an asthma trigger. You're getting warmer, though!",
+    "xValue": 35,
+    "yValue": 32
+  }, {
+    "Name": "Books",
+    "postText": "<p><strong>House dust<\/strong> is a common trigger that may also contain tiny particles of <strong>pollen, mold, cloth fibers,<\/strong> and <strong>detergents<\/strong>.<\/p>\n\n<ul>\n\t<li>Dust <strong>collects<\/strong> on surfaces and items such as books. Minimize clutter.<\/li>\n\t<br \/>\n\t<li>Wipe away dust with a damp cloth and vacuum once a week.<\/li>\n\t<br \/>\n\t<li>Use furniture polish to help reduce dust and other allergens.<\/li>\n<\/ul>\n",
+    "xValue": 35,
+    "yValue": 30,
+    "isTrigger": true
+  }, {
+    "Name": "Mirror",
+    "postText": "This is a mirror. It is <b>not<\/b> an asthma trigger. Keep looking!",
+    "xValue": 72,
+    "yValue": 12
+  }, {
+    "Name": "Hairbrush",
+    "postText": "This is a brush. It is <b>not<\/b> an asthma trigger. You're getting warmer, though!",
+    "xValue": 72,
+    "yValue": 35
+  }, {
+    "Name": "Intro",
+    "postText": "Welcome to the Trigger House - We invite you to visit each room in the house. This is meant to be fun and interactive. Each room is an example of what may be found in a home. Each room is set up to have some examples of things a person with asthma may be exposed to each day in their home or other places. Triggers are of two types: Allergens -these are things that may cause allergy symptoms for a person with asthma, and Irritants-these are things that can irritate the airways and cause asthma to worsen. Triggers are things that can cause or \u201ctrigger asthma symptoms for some people. The triggers can be in the air, on surfaces or within items. They can be breathed in and cause a reaction or problem in a person\u2019s nose, throat, and lungs that cause them to have asthma symptoms. If a person with asthma lives with triggers that cause asthma symptoms, this can also cause their asthma to be not well controlled. This can affect the person\u2019s ability to do normal activities, to not sleep well and can cause an asthma exacerbation also known as an Attack.",
+    "yValue": 10
+  }]
+}

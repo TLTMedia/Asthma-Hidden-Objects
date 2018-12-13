@@ -1,6 +1,5 @@
 {"roomImage":"FrontHouse.svg",
 "targets": [{
   "Name":"Banner",
-  "isTrigger":true,
-  "Text":"End screen"
+  "preText":"End screen"
   }]}

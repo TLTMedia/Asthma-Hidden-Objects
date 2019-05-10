@@ -1,12 +1,22 @@
 <html>
   <head>
     <script src="//code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
-  	<script src="audio.js"></script>
-  	<script src="script.js"></script>
+    <script src="js/resize.js"></script>
     <link rel="stylesheet" type="text/css" href="style.css" />
+<script>
+$(function(){
+
+  $("#closeHome").on("click", function() {
+    window.location = "https://apps.tlt.stonybrook.edu/asthma/index.html"
+  })
+    resizeWindow();
+})
+</script>
+
   </head>
   <body>
-    <div id="Intro">
+
+    <div id="screen" style="background: #6bc1bf; position:absolute;">
       <div id = "descriptionTitle">
                 Welcome to the Asthma Trigger House!
             </div>
@@ -22,11 +32,13 @@
             <button id="closeHome" type="button">
                 Click here to begin
             </button>
-             <div id="dollHouse">
-                 <img id ="leftTree" src="tree.svg">
-                 <img id ="housePic" src="DollHouseRe.png" >
-                 <img id ="rightTree" src="tree.svg" >
-            </div>
-         </div>
+
+                 <div id ="leftTree"> </div>
+                 <div id="housePic">  </div>
+                 <div id ="rightTree"> </div>
+    </div>
+
+
+
   </body>
 </html>

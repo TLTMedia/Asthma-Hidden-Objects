@@ -1,5 +1,10 @@
-{"roomImage":"FrontHouse.svg",
-"targets": [{
-  "Name":"Banner",
-  "preText":"End screen"
-  }]}
+{
+  "roomImage": "frontYar.svg",
+  "nextRoom": "frontYard",
+  "targets": [{
+    "postText": ["See you soon!", ""],
+    "Name": "Man",
+    "loopAmount": 2,
+    "frameRate": 4
+  }]
+}

@@ -1,7 +1,7 @@
 {
   "roomImage": "Bathroom.svg",
   "nextRoom": "kitchen",
-  "completedText": " <br\/>Congratulations!  You found and learned about the 9 Living Room Triggers and Ways to Avoid!!  Now you are going into the Bathroom.  Enjoy finding and learning!!  ",
+  "completedText": " <br\/> Congratulations!  You found and learned about the 9 Bathroom Triggers and Ways to Avoid!!  Now you are going into the Kitchen.  Enjoy finding and learning!!",
   "targets": [{
     "bannerText": "Mold (Bathtub) – Allergen",
     "postText": ["<p style=\"margin-left:45.0pt\"><span style=\"font-size:14px\"><strong>MOLDS<\/strong> are sometimes microscopic (can&rsquo;t be seen with the eye) fungi or spores that live on surfaces. These spores can go into the air and be breathed in.<\/span><\/p>\n\n<p style=\"margin-left:45.0pt\"><span style=\"font-size:14px\">Mold can be an allergy trigger and can cause symptoms to flare for some people with asthma. Mold grows in areas of moisture and high humidity. Common areas are: bathrooms, basements,&nbsp; potted plants, and areas of indoor water leaks. <\/span><span style=\"font-size:14.0pt\"> <\/span><\/p>\n", "<p><span style=\"font-size:14px\"><strong>How to avoid or&nbsp;reduce this trigger:<\/strong><\/span><\/p>\n\n<ul>\n\t<li><span style=\"font-size:14px\">Fix water leaks<\/span><\/li>\n\t<li><span style=\"font-size:14px\">Open a window, and\/or use a fan<\/span><\/li>\n\t<li><span style=\"font-size:14px\">Keep indoor humidity low, best between 30-50%<\/span><\/li>\n\t<li><span style=\"font-size:14px\">Use hygrometers (found at hardware stores) to measure indoor humidity <\/span><\/li>\n\t<li><span style=\"font-size:14px\">Use dehumidifier <\/span><\/li>\n\t<li><span style=\"font-size:14px\">Limit use of humidifiers or vaporizers as they can cause indoor moisture and mold growth <\/span><\/li>\n\t<li><span style=\"font-size:14px\">Clean and remove mold promptly <\/span><\/li>\n<\/ul>\n\n<p>&nbsp;<\/p>\n"],
@@ -27,7 +27,8 @@
     "isTrigger": true,
     "Name": "Perfume",
     "audioFile": "Spray.mp3",
-    "totalAnimationFrames": 4,
+    "loopAmount": 2,
+    "totalAnimationFrames": 2,
     "thumbScale": "translate(-14600,-3000) scale(11)",
     "hint":"I have a strong smell",
     "hintXValue":32
@@ -50,8 +51,48 @@
     "hint":"I’m a place to sit & relax",
     "hintXValue":50
   }, {
+    "postText": ["This is a showerhead, it is not an asthma trigger. Keep looking!"],
+    "Name": "Showerhead",
+    "audioFile": "Shower.mp3"
+  },{
+    "postText": ["This is shampoo, it is not an asthma trigger. Keep looking!"],
+    "Name": "Shampoo"
+  },{
+    "postText": ["This is a loofah, it is not an asthma trigger. Keep looking!"],
+    "Name": "Loofah"
+  },{
+    "postText": ["This is a nylon bathmat, it is not an asthma trigger. Keep looking!"],
+    "Name": "Bathmat"
+  },{
+    "postText": ["These are hand towels, they are not an asthma trigger. Keep looking!"],
+    "Name": "Towels"
+  },{
+    "postText": ["This is a glass of water, it is not an asthma trigger. Keep looking!"],
+    "Name": "Water"
+  },{
+    "postText": ["This is a razor, it is not an asthma trigger. Keep looking!"],
+    "Name": "Razor"
+  },{
+    "postText": ["This is a hairbrush, it is not an asthma trigger. Keep looking!"],
+    "Name": "Hairbrush"
+  },{
     "postText": ["This Plunger <b>Isn't<\/b> an Asthma Trigger that I know of", "This Plunger <b>Isn't<\/b> an Asthma Trigger that I know of"],
     "Name": "Plunger"
+  }, {
+    "postText": ["This is a hairdryer, it is not an asthma trigger. Keep looking!"],
+    "Name": "HairDryer",
+    "audioFile": "hairdryer.mp3"
+  }, {
+    "postText": ["This is a toothbrush, it is not an asthma trigger. Keep looking!"],
+    "Name": "Toothbrush"
+  }, {
+    "postText": ["These are lights, they are not asthma triggers. Keep looking!"],
+    "Name": "Lights"
+  }, {
+    "postText": ["Suffy is a good fish, The Asthma Free Fish. Keep looking!"],
+    "Name": "Suffy",
+    "loopAmount": 2,
+    "frameRate": 5
   }, {
     "bannerText": "Strong Odors (Bleach) – Inhaled Irritant",
     "postText": ["<p>&nbsp;<\/p>\n\n<p><span style=\"font-size:14px\">Strong odors and fumes from<strong> BLEACH <\/strong>and other common cleaning products and detergents can be an inhaled trigger for some people with asthma.<\/span><\/p>\n", "<p><span style=\"font-size:14.0pt\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<\/span><strong>How to avoid or&nbsp;reduce this trigger:<\/strong><\/p>\n\n<ul>\n\t<li><span style=\"font-size:14px\">Use non-scented household cleaning products<\/span><\/li>\n\t<li><span style=\"font-size:14px\">Avoid cleaning with products that have strong odors<\/span><\/li>\n\t<li><span style=\"font-size:14px\">Clean when the person with asthma is not in the area<\/span><\/li>\n\t<li><span style=\"font-size:14px\">Open windows and doors or use a fan to move the air when cleaning<\/span><\/li>\n\t<li><span style=\"font-size:14px\">Do not use full strength when directions say to dilute product with water<\/span><\/li>\n\t<li><span style=\"font-size:14px\">Air out the room after cleaning<\/span><\/li>\n<\/ul>\n\n<p>&nbsp;<\/p>\n"],
@@ -67,6 +108,7 @@
     "isTrigger": true,
     "Name": "Febreze",
     "audioFile": "Spray.mp3",
+    "loopAmount": 2,
     "thumbScale": "translate(-17400,-7600) scale(11)",
     "hint":"I hang out in your air",
     "hintXValue":68
@@ -84,21 +126,18 @@
     "postText": ["<p style=\"margin-left:45.0pt\"><span style=\"font-size:14px\"><strong>MOLDS<\/strong> are sometimes microscopic (can&rsquo;t be seen with the eye) fungi or spores that live on surfaces. These spores can go into the air and be breathed in.<\/span><\/p>\n\n<p style=\"margin-left:45.0pt\"><span style=\"font-size:14px\">Mold can be an allergy trigger and can cause symptoms to flare for some people with asthma. Mold grows in areas of moisture and high humidity. Common areas are: bathrooms, basements,&nbsp; potted plants, and areas of indoor water leaks. <\/span><\/p>\n", "<p><span style=\"font-size:14px\"><strong>How to avoid or&nbsp;reduce this trigger:<\/strong><\/span><\/p>\n\n<ul>\n\t<li><span style=\"font-size:14px\">Fix water leaks <\/span><\/li>\n\t<li><span style=\"font-size:14px\">Open a window, and\/or use a fan<\/span><\/li>\n\t<li><span style=\"font-size:14px\">Keep indoor humidity low, best between 30-50%<\/span><\/li>\n\t<li><span style=\"font-size:14px\">Use hygrometers (found at hardware stores) to measure indoor humidity <\/span><\/li>\n\t<li><span style=\"font-size:14px\">Use dehumidifier <\/span><\/li>\n\t<li><span style=\"font-size:14px\">Limit use of humidifiers or vaporizers as they can cause indoor moisture and mold growth <\/span><\/li>\n\t<li><span style=\"font-size:14px\">Clean and remove mold promptly <\/span><\/li>\n<\/ul>\n\n<p>&nbsp;<\/p>\n"],
     "isTrigger": true,
     "Name": "Toilet",
-    "totalAnimationFrames": 4,
+    "totalAnimationFrames": 3,
     "audioFile": "Toilet.mp3",
     "thumbScale": "translate(-6550,-3500) scale(5)",
     "hint":"I grow in & on moist places & things",
     "hintXValue":86
   }, {
-    "postText": ["This is a mirror"],
+    "postText": ["This is a mirror, it is not an asthma trigger. Keep looking!"],
     "Name": "Mirror",
     "audioFile": "cleanSqueak.mp3",
     "thumbScal": "translate(-6550,-3500) scale(5)"
   }, {
-    "postText": ["This is some lotion"],
+    "postText": ["This is some lotion, it is not an asthma trigger. Keep looking!"],
     "Name": "Lotion"
-  }, {
-    "postText": ["Suffy is a good fish, The Asthma free fish"],
-    "Name": "Suffy"
   }]
 }

@@ -31,7 +31,7 @@ rooms.forEach(function(room){
 				var trigger
 				for( i in data.targets){
 					var triggersLeft= data.targets.length-itemsClicked.length;
-				if (data.targets[i].isTrigger == true){
+				if (1==1 ||data.targets[i].isTrigger == true){
 
 				var it = data.targets[i].Name;
 				var anchor ="<p><a href='https://apps.tlt.stonybrook.edu/asthma/index.html?edit=true&item=" + it +"&currentRoom=" + room + "&phase="+phase+"&itemsClicked="+   encodeURIComponent(JSON.stringify(itemsClicked))  +"'>" + it +"</a></p>";

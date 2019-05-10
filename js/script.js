@@ -12,8 +12,8 @@ var stop = false;
 var frameCount = 0;
 var roomInfo;
 var bubbleActive = false;
-var phaseText = ["Find the Triggers", "Ways to avoid the triggers"];
-var thoughtHeaderText = ["TRIGGER:", "How to avoid-reduce this trigger:",""];
+var phaseText = ["Find the Triggers", "Ways to Avoid the Triggers"];
+var thoughtHeaderText = ["TRIGGER:", "How to avoid-reduce this trigger:", ""];
 var aspect;
 var factorTranslate = 1;
 var factorScale = 1;
@@ -125,85 +125,38 @@ function getParameters() {
 loadstate()
 
 var fps, fpsInterval, startTime, now, then, elapsed;
-$(window).resize(function() {
-  resizeScreen();
-});
-
 
 
 $(function() {
 
-
-
-  $('#phaseNum').html(phaseText[state.phase]);
-
-
-  /* Help Button
-    Click function
-  */
-
-  $("#help").on("click",function(){
-  })
   loadNewRoom(state.currentRoom);
 
-  $("#closeHome").on("click", function() {
-    window.location = "https://apps.tlt.stonybrook.edu/asthma/index.html"
-  })
 });
 
-function helpTip() {
-    var popup = document.getElementById("helpPopUp");
-    popup.classList.toggle("show");
-}
 
-function GetBrowserDim() {
-  if (window.innerHeight) {
-    return {
-      w: window.innerWidth,
-      h: window.innerHeight
-    };
-  } else {
-    return {
-      w: document.body.clientWidth,
-      h: document.body.clientHeight
-    };
-  }
-}
-function resizeScreen() {
-  var w = GetBrowserDim().w
-  var h = GetBrowserDim().h
-  // If the aspect ratio is greater than or equal to 4:3, fix height and set width based on height
-  if ((w / h) >= aspect) {
-    stageHeight = h;
-    stageWidth = (aspect) * h * 1.35;
-    stageLeft = (w - stageWidth) / 2;
-    stageTop = 0;
-  }
-  // If the aspect ratio is less than 4:3, fix width and set height based on width
-  else {
-    stageWidth = w;
-    stageHeight = (aspect) * w;
-    stageTop = (h - stageHeight) / 2;
-    stageLeft = 0;
-  }
 
-  // Set "screen" object width and height to stageWidth and stageHeight, and center screen
-  $("#screen,#homescreen").css({
-    width: stageWidth + "px",
-    height: stageHeight + "px",
-    left: stageLeft + "px",
-    top: stageTop + "px"
-  });
-  $("html").css('fontSize', stageWidth / 70 + "px");
-}
 
 function loadNewRoom(roomName) {
   totalTriggers = 0;
   state.currentRoom = roomName;
-  if(roomName == "hallway"){
-    tutorialItemCount=0;
+  if (roomName == "hallway") {
+    tutorialItemCount = 0;
   }
-  $('#phaseNum').html(phaseText[state.phase]);
+
+
+  $('#help').addClass(`helpPhase${state.phase}`)
+  $('#help').removeClass(`helpPhase${1-state.phase}`)
+  console.log(`helpPhase${1-state.phase}`)
+  if (state.phase == 1) {
+    document.getElementById("phaseNum").style.backgroundColor = "#00e673";
+    document.getElementById("triggersLeft").style.backgroundColor = "#00e673";
+  }
+  if (state.phase == 0) {
+    document.getElementById("phaseNum").style.backgroundColor = "#b01616";
+    document.getElementById("triggersLeft").style.backgroundColor = "#b01616";
+
+  }
+  $('#phaseNum').html(`Phase ${parseInt(state.phase)+1.0}: ${phaseText[state.phase]}`);
   var Dev = "";
   $.getJSON("json/" + roomName + Dev + ".json", function(data) {
 
@@ -211,9 +164,9 @@ function loadNewRoom(roomName) {
 
     $("#roomSVG").load("img/rooms/" + data.roomImage, roomSvgLoad);
 
-    resizeScreen();
+    resizeWindow();
   }).fail(function() {
-
+    console.log("I failed", "img/rooms/" + data)
   })
 }
 
@@ -233,7 +186,7 @@ function highlightComponent(id) {
 
   clonePart.attr("filter", "url(#blurMe)");
   clonePart.attr("transform", $(id).attr("transform"));
-  clonePart.children().attr("fill", "rgba(0,0,0,0)");
+  clonePart.children().attr("fill", "rgb(255,0,0)");
   clonePart.insertBefore($(id));
   return clonePart;
 }
@@ -247,6 +200,7 @@ function roomSvgLoad() {
   filter.appendChild(gaussianFilter);
   $('svg').prepend(filter)
   $("#treasureChest").empty();
+
   $(roomInfo.targets).each(function(index, value) {
 
     if ("audioFile" in value) {
@@ -255,22 +209,6 @@ function roomSvgLoad() {
     if ("isTrigger" in value) {
 
       var cubbyDiv = $(".cubbyCopier").clone()
-
-    cubbyDiv.on("click", function (evt) {
-      var item = roomInfo.targets[lookup[evt.currentTarget.id.split("_")[1]]];
-
-      var thoughtType = "hint";
-
-      $('#cubbyHint').text(item[thoughtType]);
-      $("#cubbyHint").css({
-        left: item["hintXValue"] + "%"
-      });
-
-      var popup = document.getElementById("cubbyHint");
-      popup.classList.toggle("show");
-    }
-);
-
 
       cubbyDiv.attr("id", "cubby_" + value.Name)
       cubbyDiv.attr("class", "cubbyCopy")
@@ -305,7 +243,7 @@ function roomSvgLoad() {
 
 
       document.getElementById("cubbySVG_" + value.Name).setAttribute("transform", value.thumbScale || "");
-      resizeScreen();
+      resizeWindow();
       totalTriggers++;
 
 
@@ -317,6 +255,22 @@ function roomSvgLoad() {
     lookup[value.Name] = index;
     aspect = 1 / 1
   })
+  $('.cubbyCopy').on("mouseenter", function(evt) {
+    var item = roomInfo.targets[lookup[evt.currentTarget.id.split("_")[1]]];
+    var width = $(evt.currentTarget).width()
+
+    $('#cubbyHint').text(item["hint"]);
+    var left = `${$(evt.currentTarget).position().left+width/2.4}px`
+    console.log(left)
+    $("#cubbyHint").css({
+      left: left
+    });
+    $('#cubbyHint').show()
+  })
+  $('.cubbyCopy').on("mouseleave", function(evt) {
+    $('#cubbyHint').hide()
+  });
+
 
   state.triggersLeft = totalTriggers;
   if (totalTriggers < 4) {
@@ -325,11 +279,12 @@ function roomSvgLoad() {
   } else {
     $(".cubbyCopy").css("width", (100 / totalTriggers) + "%")
   }
-  if(state.currentRoom == "frontYard"){
+  makeClickEvents();
+  if (state.currentRoom == "frontYard") {
     hideLRBubbles();
-  }else{
+    $(".clickable").trigger("click")
+  } else {
     displayTriggersLeft();
-    makeClickEvents();
   }
 
   showPreText();
@@ -338,23 +293,38 @@ function roomSvgLoad() {
     "opacity": 1
   }, 1000)
 
-  resizeScreen();
+  resizeWindow();
 }
 
 function makeClickEvents() {
-
+  console.log("makeclick")
   $(".clickable").on("click", function(evt) {
+    console.log("click")
+
+
 
     if (!bubbleActive || state.currentRoom == "hallway") {
       bubbleActive = true;
+
+      $(document).off().on("mouseup", function(e) {
+
+        var container = $("#thoughtBubble");
+
+        if (!container.is(e.target) && container.has(e.target).length === 0) {
+
+          $("#close").trigger("click");
+
+        }
+      });
+
       var clickedItem = evt.currentTarget.id
       if (state.currentRoom == "hallway") {
-        if(clickedItem == tutorialItems[tutorialItemCount]){
+        if (clickedItem == tutorialItems[tutorialItemCount]) {
           itemClicked(clickedItem)
           $('#thoughtHeader').show();
           closeBubble(clickedItem, "preText")
         }
-      }else{
+      } else {
         itemClicked(clickedItem)
         $('#thoughtHeader').show();
         closeBubble(clickedItem, "preText")
@@ -363,6 +333,7 @@ function makeClickEvents() {
     }
   });
 }
+
 
 function itemClicked(clickedItem) {
 
@@ -411,17 +382,14 @@ function showTreasureBox(item) {
 
 
 function transition() {
+
+  console.log(state.triggersLeft, state.phase, state.currentRoom, roomInfo.nextRoom)
   if (!state.triggersLeft) {
     state.triggersLeft = totalTriggers;
-    if(state.phase == 0){
-      document.getElementById("phaseNum").style.backgroundColor = "#00e673";
-      document.getElementById("triggersLeft").style.backgroundColor = "#00e673";
-    }
     if (state.phase == 1) {
-      document.getElementById("phaseNum").style.backgroundColor = "#b01616";
-      document.getElementById("triggersLeft").style.backgroundColor = "#b01616";
       state.currentRoom = roomInfo.nextRoom;
     }
+
     state.itemsClicked = []
     changePhase();
 
@@ -436,8 +404,8 @@ function transition() {
 
 function thoughts(item, thoughtType) {
 
-  if(state.edit != "true"){
-        $('#thoughtHeader').hide();
+  if (state.edit != "true") {
+    $('#thoughtHeader').hide();
   }
   if (thoughtType != "preText") {
     $('#thoughtHeader').show();
@@ -467,46 +435,56 @@ function thoughts(item, thoughtType) {
 
   function displayThought(item, thoughtType) {
     removeHighlightCopy()
-
+    console.log(item.Name, state.currentRoom)
     if (state.currentRoom == "hallway") {
+      console.log(item.Name)
       highlightComponent("#" + item.Name)
     }
-    if(item[thoughtType][state.phase]!=""){
-    bubbleActive = true;
+    if (item[thoughtType][state.phase] != "") {
+      bubbleActive = true;
 
-    $("#thoughtBubble").css({
-      "left": (item.xValue || 5) + "%",
-      "top": (item.yValue || 20) + "%"
-    });
-    $("#thoughtBubble").addClass("thoughtPop");
-    $("#thoughtBubble").css("display", "inline");
-    if (state.edit == "true") {
+      $("#thoughtBubble").css({
+        "left": (item.xValue || 5) + "%",
+        "top": (item.yValue || 20) + "%"
+      });
+      $("#thoughtBubble").addClass("thoughtPop");
+      $("#thoughtBubble").css("display", "inline");
+      if (state.edit == "true") {
 
-      createEditor(  $('#thoughtBubble p'),item,thoughtType)
+        createEditor($('#thoughtBubble p'), item, thoughtType)
 
 
-    } else {
+      } else {
 
-      var itemText = item.Title || item.bannerText
-      var headerText = thoughtHeaderText[state.phase].toUpperCase()
-      var pre = false;
-      if(state.currentRoom == "hallway" && state.c){
-        headerText = "Found Item:"
+        var itemText = item.Title || item.bannerText||"None"
+        var headerText = thoughtHeaderText[state.phase].toUpperCase()
+        var pre = false;
+        if (state.currentRoom == "hallway" && state.c) {
+          headerText = "Found Item:"
+        }
+
+        if (state.triggersLeft == 1 && state.phase == 1 && thoughtType == "postText") {
+          additionalText += roomInfo.completedText;
+        }
+        $('#thoughtHeaderText').html("&nbsp;" + headerText + " " + itemText)
+        $("#thoughtBubble p").html(item[thoughtType][state.phase] + additionalText)
+        $("#thoughtBubble p li").hide()
+
+        setInterval(function() {
+
+          $("#thoughtBubble p li:hidden").first().show()
+
+        }, 3000)
+
       }
 
-      if(state.triggersLeft==1 && state.phase == 1 && thoughtType == "postText"){
-        additionalText += roomInfo.completedText;
-      }
-      $('#thoughtHeaderText').html("&nbsp;" + headerText + " " + itemText)
-      $("#thoughtBubble p").html(item[thoughtType][state.phase] + additionalText)
+
     }
-
-
-  }
 
   }
 }
-function createEditor(el,item,thoughtType){
+
+function createEditor(el, item, thoughtType) {
   el.html('<form><textarea id=txtArea></textarea> </form>');
 
 
@@ -526,7 +504,9 @@ function createEditor(el,item,thoughtType){
       textType: thoughtType,
       text: $('textarea').val()
     }).done(function(data) {
-      window.location = "?edit=true&item=" + item.Name + "&room=" + state.currentRoom + "&phase=" + state.phase;
+      var location = "?edit=true&item=" + item.Name + "&currentRoom=" + state.currentRoom + "&phase=" + state.phase;
+      console.log(location);
+      window.location = location;
     });
     event.preventDefault();
   })
@@ -535,15 +515,16 @@ function createEditor(el,item,thoughtType){
 
 function countTriggers(item) {
   if ((state.itemsClicked.indexOf(item.Name) == -1)) {
-    if(state.triggersLeft){
+    if (state.triggersLeft) {
       state.itemsClicked.push(item.Name);
       state.triggersLeft--;
     }
 
-  displayTriggersLeft();
+    displayTriggersLeft();
 
   }
 }
+
 function changePhase() {
   state.phase = 1 - state.phase;
   state.currentItemIndex = 0;
@@ -555,7 +536,7 @@ function displayTriggersLeft() {
   $('#triggersLeft').html(state.triggersLeft);
 }
 //Hide TriggersLeft and phaseNum on the top left of the screen
-function hideLRBubbles(){
+function hideLRBubbles() {
   $('#triggersLeft').hide();
   $('#phaseNum').hide();
 }

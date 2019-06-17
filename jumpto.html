@@ -24,7 +24,7 @@ rooms.forEach(function(room){
 			var filePrefix=room + phase;
 			$( "#list" ).append( "<div id='" + filePrefix + "'></div>" );
 			var thisList = $("#" + filePrefix);
-			thisList.append("<h3>" + room + " Phase "+ (phase+1)+"</h3>");
+			thisList.append("<h3> <a href='https://apps.tlt.stonybrook.edu/asthma/index.html?currentRoom=" + room + "&phase="+phase+"'>"+ room + " Phase "+ (phase+1)+"</a></h3>");
 			$.getJSON("json/"+room+".json", function(data) {
 				console.log(data)
 				var itemsClicked=[]

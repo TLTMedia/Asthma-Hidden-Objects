@@ -9,6 +9,11 @@ html {
   overflow-x: hidden;
 }
 
+
+
+
+
+
 #Intro{
   background: #6bc1bf;
   position: absolute;
@@ -17,7 +22,7 @@ html {
 #descriptionTitle {
   font-size: 2rem;
   text-align: center;
-  color: aliceblue;
+  color: black;
   border-style: solid;
   border-width: 3px;
   padding: 1rem;
@@ -25,8 +30,9 @@ html {
 }
 
 #description {
-  font-size: 1rem;
-  color: aliceblue;
+  font-size: 1.5rem;
+  text-align: center;
+  color: black;
   padding: 2rem;
 }
 
@@ -52,7 +58,7 @@ html {
   transition-duration: .5s;
   text-align: center;
 }
-#leftTree{
+/* #leftTree{
   display: inline-grid;
   position: absolute;
   vertical-align: bottom;
@@ -60,7 +66,8 @@ html {
   background-repeat: no-repeat;
   height:50%;
   width: 24%;
-  bottom:0;
+  bottom:10%;
+  left: 5%;
 }
 #rightTree{
   display: inline-grid;
@@ -70,19 +77,18 @@ html {
   background-repeat: no-repeat;
   height:50%;
   width: 24%;
-  bottom:0;
-  left: 80%;
-}
+  bottom:10%;
+  left: 71%;
+} */
 #housePic{
   display: inline-grid;
   position: absolute;
   vertical-align: bottom;
   background:url(DollHouseRe.svg) no-repeat;
   align: center;
-  width:40%;
-  height: 40%;
-  bottom:0;
-  left:30%;
+  width:100%;
+  height: 100%;
+  bottom: -40%;
 }
 #closeHome:hover {
   background-color: #FF7373;
@@ -113,7 +119,7 @@ b {
 
 .bubble span, .bubble p {
   font-size: 1rem !important;
-  ;
+
 }
 
 .bubble {
@@ -124,14 +130,13 @@ b {
   background: #FFFFFF;
   display: none;
   border: #7F7F7F solid 0.3rem;
-]
   border-radius: 1rem;
 }
 
 .highlightPart {
   animation: pulsate 2s infinite;
   stroke: rgba(255, 0, 0, 0.55);
-  stroke-width: 8px;
+  stroke-width: 1%;
 }
 
 @keyframes pulsate {
@@ -264,10 +269,11 @@ b {
 #cubbyHint
 {
 position:absolute;
-left:0;
-top:-35%;
-
-
+text-align: center;
+top:-50%;
+font-size:1.5rem;
+padding:1.5rem;
+width:auto;
 }
 
 
@@ -379,4 +385,97 @@ display:none;
 }
 .cubbyCopy:hover{
   background-color: #ffdbdb;
+}
+
+
+
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+
+  }
+  to{
+    opacity:0;
+
+  }
+}
+
+
+  @keyframes fadeIn {
+  from {
+    opacity: 0;
+
+    }
+to {
+        opacity:1;
+
+    }
+/*
+    90% {
+        opacity:1;
+
+    }
+  100% {
+        opacity:0;
+
+    } */
+
+
+  }
+
+  @keyframes crawl {
+    0% {
+      top: 0%
+    }
+    100% {
+      top: -80%
+    }
+
+  }
+#creators{
+  opacity:0;
+  text-align: center;
+animation: fadeIn,fadeOut ;
+ animation-duration:2s,2s;
+ animation-iteration-count:1,1;
+ animation-delay:0s,4s;
+ animation-fill-mode: forwards,forwards;
+}
+
+#developers{
+ opacity:0;
+ text-align: center;
+  animation: fadeIn, fadeOut;
+animation-duration: 2s,2s;
+animation-iteration-count:1,1;
+animation-delay: 6s, 10s;
+animation-fill-mode: forwards,forwards;
+
+}
+
+#crawl{
+  opacity:0;
+  text-align: center;
+  animation: fadeIn,crawl;
+  animation-duration: 1s,8s;
+  animation-delay: 13s,14s;
+  animation-direction: normal,normal;
+  top:0%;
+  position: absolute;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards,forwards;
+}
+#creators,#developers{
+position:absolute;
+top: 1rem;
+left: 1rem;
+}
+#credits{
+position:relative;
+width:20rem;
+height:25rem;
+
+  overflow:hidden;
+
 }

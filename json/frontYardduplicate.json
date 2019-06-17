@@ -1,0 +1,13 @@
+{
+  "bannerText": "Credits",
+  "roomImage": "frontYard.svg",
+  "nextRoom": "frontYard",
+  "targets": [{
+    "postText": ["<div id=\"credits\">'<div id=\"creators\" > <h2>Conceptualized by</h2><h1><strong>Lisa Romard MS.,CPNP, ANP, AE-C </strong></h1></div><div id=\"developers\"><h1>Content & Design Developers</h1><p>Lisa Romard MS., CPNP, ANP, AE-C </p><p>Linda Cimino Ed.D., M.S., CPNP, ANP, CCRC, CHSE </p></div><div id=\"crawl\"><h1>Technical & Graphic design</h1><p>Paul St. Denis</p><p>Kari Barry</p><p>Razz Joseph</p><p>Gregory Lucci</p><p>James Palmeri</p><p>Anna Sklyarova</p><p>Shu Wen Yang</p><h1>Content Review</h1><p>Anne Little</p><p>Claudia Guglielmo</p><p>Jignisha Patel MS., RN, PNP-SB SON </p><p>Christy Etsch BSN., RN- SB SON</p><p>Asthma Coalition of Long Island (ACLI) Asthma Educators</p></div>'</div>"],
+    "Name": "Girl",
+    "loopAmount": 1,
+    "yValue": 10,
+    "xValue": 10,
+    "frameRate": 5
+  }]
+}

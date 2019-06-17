@@ -12,129 +12,112 @@ var stop = false;
 var frameCount = 0;
 var roomInfo;
 var bubbleActive = false;
-var phaseText = ["Find the Triggers", "Ways to Avoid the Triggers"];
-var thoughtHeaderText = ["TRIGGER:", "How to avoid-reduce this trigger:", ""];
+var phaseText = [ "Find the Triggers", "Ways to Avoid the Triggers" ];
+var thoughtHeaderText = [ "", "", "" ];
 var aspect;
 var factorTranslate = 1;
 var factorScale = 1;
-var state;
-
+var defaults =
+    {
+      "phase" : 0,
+      "edit" : false,
+      "currentItemIndex" : 0,
+      "itemsClicked" : [],
+      "currentRoom" : "hallway"
+    }
+var state = loadState();;
+//var state;
 
 /* Tutorial - Hallway
   Created three items for the hallway to show the mechanics
 */
-var tutorialItems = ["Carpet", "Mold", "Rat"];
+var tutorialItems = [ "Carpet", "Mold", "Rat" ];
 var tutorialItemCount = 0;
 
-//Beginning room defaults
-var defaults = {
-  "phase": 0,
-  "edit": false,
-  "currentItemIndex": 0,
-  "itemsClicked": [],
-  "currentRoom": "hallway"
-}
-
-
+// Beginning room defaults
 
 /* Close Button
   parameters: item name, thoughtTypes
   return
 */
 function closeBubble(itemName, thoughtType) {
-  var currentItem = roomInfo.targets.find(function(itemIter) {
-    return itemIter.Name == itemName;
-  })
+ var currentItem = roomInfo.targets.find(function(
+      itemIter) { return itemIter.Name == itemName; })
   bubbleActive = false;
   $("#thoughtBubble").css({
-    "display": "none"
+    "display" : "none"
 
   });
-  if (currentItem.isTrigger) {
+ if (currentItem.isTrigger) {
     if (state.phase == 1) {
       disappear(currentItem);
     }
-
     if (thoughtType == "postText") {
       showTreasureBox(currentItem);
       state.currentItemIndex++;
       tutorialItemCount++;
       countTriggers(currentItem);
     }
-  }
+}
 }
 
-
-function showPreText() {
-
+function
+showPreText() {
   if (roomInfo.targets[state.currentItemIndex].preText) {
     thoughts(roomInfo.targets[state.currentItemIndex], "preText")
   }
 }
 
-function loadstate() {
-  var dict = getParameters()
+function
+loadState() {
+ var loadstate;
+ var dict = getParameters()
   if (Object.keys(dict).length) {
     localStorage.clear();
-    state = {};
+    loadstate = {};
   }
   if (localStorage.hasOwnProperty("state")) {
-    state = JSON.parse(localStorage.getItem("state"));
+    loadstate = JSON.parse(localStorage.getItem("state"));
   } else {
-    state = {}
+    loadstate = {}
   }
 
-  Object.keys(dict).forEach(function(key) {
-    state[key] = dict[key]
-  });
+  Object.keys(dict).forEach(function(key) { loadstate[key] = dict[key] });
 
   Object.keys(defaults).forEach(function(key) {
-
-    if (!state.hasOwnProperty(key)) {
-      state[key] = defaults[key];
+    if (!loadstate.hasOwnProperty(key)) {
+      loadstate[key] = defaults[key];
     }
   })
-
-
-
-
+return loadstate;
 }
 
-function getParameterByName() {
+function
+getParameterByName() { return false; }
 
-  return false;
-
-}
-
-function getParameters() {
+function
+getParameters() {
   var dict = {};
-  decodeURIComponent(window.location.search).substring(1).split("&").forEach(function(val, idx) {
+  decodeURIComponent(window.location.search)
+      .substring(1)
+      .split("&")
+      .forEach(function(val, idx) {
+        nameVal = val.split("=");
+        nameVal[1]
 
-      nameVal = val.split("=");
-      nameVal[1]
+            if (nameVal[0] == "itemsClicked") {
+          dict[nameVal[0]] = JSON.parse(decodeURIComponent(nameVal[1]));
+        }
+        else dict[nameVal[0]] = nameVal[1]
+      }
 
-      if (nameVal[0] == "itemsClicked") {
-        dict[nameVal[0]] = JSON.parse(decodeURIComponent(nameVal[1]));
-      } else dict[nameVal[0]] = nameVal[1]
-    }
-
-
-  );
+      );
   return dict;
 }
-loadstate()
 
 var fps, fpsInterval, startTime, now, then, elapsed;
 
-
-$(function() {
-
-  loadNewRoom(state.currentRoom);
-
-});
-
-
-
+$(function() { loadNewRoom(state.currentRoom); });
 
 function loadNewRoom(roomName) {
   totalTriggers = 0;
@@ -143,10 +126,9 @@ function loadNewRoom(roomName) {
     tutorialItemCount = 0;
   }
 
-
   $('#help').addClass(`helpPhase${state.phase}`)
-  $('#help').removeClass(`helpPhase${1-state.phase}`)
-  console.log(`helpPhase${1-state.phase}`)
+  $('#help').removeClass(`helpPhase${1 - state.phase}`)
+  console.log(`helpPhase${1 - state.phase}`)
   if (state.phase == 1) {
     document.getElementById("phaseNum").style.backgroundColor = "#00e673";
     document.getElementById("triggersLeft").style.backgroundColor = "#00e673";
@@ -154,24 +136,21 @@ function loadNewRoom(roomName) {
   if (state.phase == 0) {
     document.getElementById("phaseNum").style.backgroundColor = "#b01616";
     document.getElementById("triggersLeft").style.backgroundColor = "#b01616";
-
   }
-  $('#phaseNum').html(`Phase ${parseInt(state.phase)+1.0}: ${phaseText[state.phase]}`);
+  $('#phaseNum')
+      .html(`Phase ${parseInt(state.phase) + 1.0}: ${phaseText[state.phase]}`);
   var Dev = "";
   $.getJSON("json/" + roomName + Dev + ".json", function(data) {
+     roomInfo = data;
+     $("#roomSVG").load("img/rooms/" + data.roomImage, roomSvgLoad);
 
-    roomInfo = data;
-
-    $("#roomSVG").load("img/rooms/" + data.roomImage, roomSvgLoad);
-
-    resizeWindow();
-  }).fail(function() {
-    console.log("I failed", "img/rooms/" + data)
-  })
+     resizeWindow();
+   }).fail(function() { console.log("I failed", "img/rooms/" + data) })
 }
 
 function removeHighlightCopy() {
-  // FOR EVERY OBJECT WITH AN ID THAT CONTAINS THE WORD "COPY", REMOVE THE OBJECT
+  // FOR EVERY OBJECT WITH AN ID THAT CONTAINS THE WORD "COPY", REMOVE THE
+  // OBJECT
   $("[id$='BlurCopy']").remove();
 }
 
@@ -194,7 +173,8 @@ function highlightComponent(id) {
 function roomSvgLoad() {
   var filter = document.createElementNS("http://www.w3.org/2000/svg", "filter");
   filter.setAttribute("id", "blurMe");
-  var gaussianFilter = document.createElementNS("http://www.w3.org/2000/svg", "feGaussianBlur");
+  var gaussianFilter =
+      document.createElementNS("http://www.w3.org/2000/svg", "feGaussianBlur");
   gaussianFilter.setAttribute("in", "SourceGraphic");
   gaussianFilter.setAttribute("stdDeviation", "2");
   filter.appendChild(gaussianFilter);
@@ -202,7 +182,6 @@ function roomSvgLoad() {
   $("#treasureChest").empty();
 
   $(roomInfo.targets).each(function(index, value) {
-
     if ("audioFile" in value) {
       soundEffects[value.Name] = ss_soundbits("audio/" + value.audioFile);
     }
@@ -216,8 +195,6 @@ function roomSvgLoad() {
       $("#treasureChest").append(cubbyDiv)
       var cubbySVG = $("#cubby_" + value.Name + " svg");
 
-
-
       var cubbyItem = jQuery("#" + value.Name).clone();
 
       cubbyItem.attr("id", "cubbySVG_" + value.Name);
@@ -226,30 +203,23 @@ function roomSvgLoad() {
       if (state.itemsClicked.indexOf(value.Name) == -1) {
 
         opacityVal = "0";
-
       }
 
       cubbyItem.appendTo(cubbySVG).css('opacity', opacityVal);
-
-
-      cubbyItemBBox = document.getElementById("cubbySVG_" + value.Name).getBBox()
+console.log(value.Name)
+      cubbyItemBBox =
+          document.getElementById("cubbySVG_" + value.Name).getBBox()
 
       $("#cubbySVG_" + value.Name + ' g[id]').each(function(item, val) {
-
         var oldID = $(val).attr("id");
         $(val).attr("id", "cubbySVG_" + oldID)
-
       })
 
-
-      document.getElementById("cubbySVG_" + value.Name).setAttribute("transform", value.thumbScale || "");
+      document.getElementById("cubbySVG_" + value.Name)
+          .setAttribute("transform", value.thumbScale || "");
       resizeWindow();
       totalTriggers++;
-
-
     }
-
-
 
     $("#" + value.Name).addClass("clickable")
     lookup[value.Name] = index;
@@ -260,17 +230,20 @@ function roomSvgLoad() {
     var width = $(evt.currentTarget).width()
 
     $('#cubbyHint').text(item["hint"]);
-    var left = `${$(evt.currentTarget).position().left+width/2.4}px`
+    // if(item.hintXValue){
+    //   var left = `${$(evt.currentTarget).position().left + width / 2.4}px`
+    //
+    // }
+    var left = `${($(evt.currentTarget).position().left + width)-width}px`
     console.log(left)
-    $("#cubbyHint").css({
-      left: left
-    });
+    $("#cubbyHint").css({left : left});
     $('#cubbyHint').show()
+    //  highlightComponent("#" + item.Name)
   })
   $('.cubbyCopy').on("mouseleave", function(evt) {
     $('#cubbyHint').hide()
+    // removeHighlightCopy()
   });
-
 
   state.triggersLeft = totalTriggers;
   if (totalTriggers < 4) {
@@ -289,33 +262,18 @@ function roomSvgLoad() {
 
   showPreText();
 
-  $('body').animate({
-    "opacity": 1
-  }, 1000)
+  $('body').animate({"opacity" : 1}, 1000)
 
   resizeWindow();
 }
 
 function makeClickEvents() {
-  console.log("makeclick")
   $(".clickable").on("click", function(evt) {
     console.log("click")
-
-
 
     if (!bubbleActive || state.currentRoom == "hallway") {
       bubbleActive = true;
 
-      $(document).off().on("mouseup", function(e) {
-
-        var container = $("#thoughtBubble");
-
-        if (!container.is(e.target) && container.has(e.target).length === 0) {
-
-          $("#close").trigger("click");
-
-        }
-      });
 
       var clickedItem = evt.currentTarget.id
       if (state.currentRoom == "hallway") {
@@ -324,20 +282,31 @@ function makeClickEvents() {
           $('#thoughtHeader').show();
           closeBubble(clickedItem, "preText")
         }
-      } else {
+      }
+      else {
         itemClicked(clickedItem)
         $('#thoughtHeader').show();
         closeBubble(clickedItem, "preText")
       }
-
     }
   });
+
+      $('#roomSVG').off("mouseup").on("mouseup", function(e) {
+
+if(!$(e.target).hasClass('clickable')){
+
+
+          $("#close").trigger("click");
+}
+});
+
+
+
+
 }
 
-
 function itemClicked(clickedItem) {
-
-
+//$(".clickable").css("pointer-events", "none");
   var item = roomInfo.targets[lookup[clickedItem]];
   var fps = item.frameRate || defaultFrameRate;
   if ("audioFile" in item) {
@@ -345,45 +314,32 @@ function itemClicked(clickedItem) {
   }
 
   startAnimating(fps, item);
-
-
 };
 
 function disappear(item) {
 
-
-  $("#" + item.Name).animate({
-      opacity: 0,
-    },
-    1000,
-    function() {
-
-
-    }
-  );
-
-
-
+  $("#" + item.Name)
+      .animate({
+        opacity : 0,
+      },
+               1000, function() {
+$("#" + item.Name).css("display", "none");
+               });
+$("#" + item.Name).css("pointer-events", "none");
 }
-
 function showTreasureBox(item) {
 
   var xerox = $("#cubbySVG_" + item.Name);
   xerox.animate({
-      opacity: 1,
-    },
-    1000,
-    function() {
-      transition();
-
-    }
-  );
+    opacity : 1,
+  },
+                1000, function() { transition(); });
 }
-
 
 function transition() {
 
-  console.log(state.triggersLeft, state.phase, state.currentRoom, roomInfo.nextRoom)
+  console.log(state.triggersLeft, state.phase, state.currentRoom,
+              roomInfo.nextRoom)
   if (!state.triggersLeft) {
     state.triggersLeft = totalTriggers;
     if (state.phase == 1) {
@@ -395,14 +351,16 @@ function transition() {
 
     loadNewRoom(state.currentRoom);
     //  return;
-  } else {
+  }
+  else {
     showPreText();
   }
   localStorage.setItem("state", JSON.stringify(state))
-
 }
 
 function thoughts(item, thoughtType) {
+
+
 
   if (state.edit != "true") {
     $('#thoughtHeader').hide();
@@ -422,19 +380,13 @@ function thoughts(item, thoughtType) {
 
   displayThought(item, thoughtType)
 
-
   $("#close").off("click");
-  $("#close").on("click", function(evt) {
-
-
-    closeBubble(item.Name, thoughtType)
-
-  });
-
-
+  $("#close").on("click",
+                 function(evt) { $(".clickable").css("pointer-events", "auto");
+closeBubble(item.Name, thoughtType) });
 
   function displayThought(item, thoughtType) {
-    removeHighlightCopy()
+     removeHighlightCopy()
     console.log(item.Name, state.currentRoom)
     if (state.currentRoom == "hallway") {
       console.log(item.Name)
@@ -442,10 +394,9 @@ function thoughts(item, thoughtType) {
     }
     if (item[thoughtType][state.phase] != "") {
       bubbleActive = true;
-
       $("#thoughtBubble").css({
-        "left": (item.xValue || 5) + "%",
-        "top": (item.yValue || 20) + "%"
+        "left" : (item.xValue || 5) + "%",
+        "top" : (item.yValue || 20) + "%"
       });
       $("#thoughtBubble").addClass("thoughtPop");
       $("#thoughtBubble").css("display", "inline");
@@ -453,64 +404,61 @@ function thoughts(item, thoughtType) {
 
         createEditor($('#thoughtBubble p'), item, thoughtType)
 
-
       } else {
 
-        var itemText = item.Title || item.bannerText||"None"
+        var itemText = item.Title || item.bannerText || "None"
         var headerText = thoughtHeaderText[state.phase].toUpperCase()
         var pre = false;
         if (state.currentRoom == "hallway" && state.c) {
           headerText = "Found Item:"
         }
 
-        if (state.triggersLeft == 1 && state.phase == 1 && thoughtType == "postText") {
+        if (state.triggersLeft == 1 && state.phase == 1 &&
+            thoughtType == "postText") {
           additionalText += roomInfo.completedText;
         }
         $('#thoughtHeaderText').html("&nbsp;" + headerText + " " + itemText)
-        $("#thoughtBubble p").html(item[thoughtType][state.phase] + additionalText)
-        $("#thoughtBubble p li").hide()
+        var whichText=state.phase;
+        if (item[thoughtType].length<2){
+          whichText=0;
+          if(state.currentRoom =="frontYard"){
+    $('#thoughtHeader').hide();
 
-        setInterval(function() {
+          }
+        }
+        $("#thoughtBubble p")
+            .html(item[thoughtType][whichText] + additionalText)
 
-          $("#thoughtBubble p li:hidden").first().show()
-
-        }, 3000)
 
       }
-
-
     }
-
   }
 }
 
 function createEditor(el, item, thoughtType) {
   el.html('<form><textarea id=txtArea></textarea> </form>');
 
-
-  $('textarea#txtArea').ckeditor({
-    height: "300px",
-    toolbarStartupExpanded: true,
-    width: "100%"
-  });
+  $('textarea#txtArea')
+      .ckeditor(
+          {height : "300px", toolbarStartupExpanded : true, width : "100%"});
 
   $('textarea').val(item[thoughtType][state.phase])
   $('form').submit(function(event) {
-
     $.post("save.php", {
-      name: item.Name,
-      room: state.currentRoom,
-      phase: state.phase,
-      textType: thoughtType,
-      text: $('textarea').val()
-    }).done(function(data) {
-      var location = "?edit=true&item=" + item.Name + "&currentRoom=" + state.currentRoom + "&phase=" + state.phase;
+       name : item.Name,
+       room : state.currentRoom,
+       phase : state.phase,
+       textType : thoughtType,
+       text : $('textarea').val()
+     }).done(function(data) {
+      var location = "?edit=true&item=" + item.Name +
+                     "&currentRoom=" + state.currentRoom +
+                     "&phase=" + state.phase;
       console.log(location);
       window.location = location;
     });
     event.preventDefault();
   })
-
 }
 
 function countTriggers(item) {
@@ -521,7 +469,6 @@ function countTriggers(item) {
     }
 
     displayTriggersLeft();
-
   }
 }
 
@@ -530,12 +477,9 @@ function changePhase() {
   state.currentItemIndex = 0;
 }
 
-
-//Show TriggersLeft on the top left of the screen
-function displayTriggersLeft() {
-  $('#triggersLeft').html(state.triggersLeft);
-}
-//Hide TriggersLeft and phaseNum on the top left of the screen
+// Show TriggersLeft on the top left of the screen
+function displayTriggersLeft() { $('#triggersLeft').html(state.triggersLeft); }
+// Hide TriggersLeft and phaseNum on the top left of the screen
 function hideLRBubbles() {
   $('#triggersLeft').hide();
   $('#phaseNum').hide();
@@ -558,7 +502,8 @@ function startAnimating(fps, item) {
 }
 
 function animate() {
-  if (isAnimating) requestAnimationFrame(animate);
+  if (isAnimating)
+    requestAnimationFrame(animate);
   // calc elapsed time since last loop
   now = Date.now();
   elapsed = now - then;
@@ -566,39 +511,35 @@ function animate() {
   if (elapsed > fpsInterval) {
     then = now - (elapsed % fpsInterval);
     animatingList.forEach(function(item, index) {
-
       var itemID = item.Name.split("-")[0] + "-";
       var selector = "#" + itemID;
       var animationLength = 0
-      $("[id^='" + itemID + "']").each(function(idx, val) {
-
-          if (RegExp(itemID + '[0-9]*$').test(val.id)) {
-            $(val).attr("style", "display:none")
-            animationLength++;
+      $("[id^='" + itemID + "']")
+          .each(function(idx, val) {
+            if (RegExp(itemID + '[0-9]*$').test(val.id)) {
+              $(val).attr("style", "display:none")
+              animationLength++;
+            }
           }
 
+          )
 
-        }
-
-
-
-      )
-
-
-
-
-
-
-      if (item.animationFrame <= (animationLength * (animationItem.loopAmount + 1))) {
-        //var displayFrame = (animationFrame % animationItem.totalAnimationFrames) + 1
-        //wacky cal
-        var displayFrame = Math.abs((item.animationFrame + animationLength - 2) % ((animationLength - 1) * 2) - (animationLength - 1)) + 1
+      if (item.animationFrame <=
+          (animationLength * (animationItem.loopAmount + 1))) {
+        // var displayFrame = (animationFrame %
+        // animationItem.totalAnimationFrames) + 1 wacky cal
+        var displayFrame =
+            Math.abs((item.animationFrame + animationLength - 2) %
+                         ((animationLength - 1) * 2) -
+                     (animationLength - 1)) +
+            1
 
         $(selector + displayFrame).attr("style", "display:inline")
         item.animationFrame++
-      } else {
+      }
+      else {
         thoughts(item, "postText");
-        removeHighlightCopy()
+        removeHighlightCopy();
         delete animatingList[index]
         isAnimating = false;
         if (item.stopAtEnd) {
@@ -606,7 +547,6 @@ function animate() {
         } else {
           $(selector + 1).attr("style", "display:inline");
         }
-
       }
     });
   }

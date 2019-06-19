@@ -118,11 +118,19 @@ b {
 }
 
 .bubble span, .bubble p {
-  font-size: 1rem !important;
+  font-size: 1rem;
 
 }
+/* Font Styling for frontYard */
+#credits .style1 {font-size:2rem; font-weight: bold; }
+#credits .style2 {font-size:2rem;}
+#credits .style3 {font-size: 1.4rem; font-weight: bold;}
+#credits .style4 {font-size: 1.2rem;}
+#credits .style5 {font-size: 1rem; font-style: italic; color: #036187}
+/*end of font styling for frontYard */
 
 .bubble {
+  opacity: .9;
   position: absolute;
   min-height: 1rem;
   padding: 1rem;
@@ -436,6 +444,7 @@ to {
 #creators{
   opacity:0;
   text-align: center;
+  top: 40%;
 animation: fadeIn,fadeOut ;
  animation-duration:2s,2s;
  animation-iteration-count:1,1;
@@ -446,6 +455,7 @@ animation: fadeIn,fadeOut ;
 #developers{
  opacity:0;
  text-align: center;
+ top: 5%;
   animation: fadeIn, fadeOut;
 animation-duration: 2s,2s;
 animation-iteration-count:1,1;
@@ -457,24 +467,24 @@ animation-fill-mode: forwards,forwards;
 #crawl{
   opacity:0;
   text-align: center;
-  animation: fadeIn,crawl;
-  animation-duration: 1s,8s;
+animation: fadeIn,crawl;
+  animation-duration: 1s,10s;
   animation-delay: 13s,14s;
   animation-direction: normal,normal;
-  top:0%;
+  top:0;
   position: absolute;
   animation-timing-function: linear;
   animation-fill-mode: forwards,forwards;
 }
 #creators,#developers{
-position:absolute;
-top: 1rem;
-left: 1rem;
+position: relative;
+
+
 }
 #credits{
 position:relative;
-width:20rem;
-height:25rem;
+width:30rem;
+height:30rem;
 
   overflow:hidden;
 

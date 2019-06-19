@@ -142,6 +142,14 @@ function loadNewRoom(roomName) {
   var Dev = "";
   $.getJSON("json/" + roomName + Dev + ".json", function(data) {
      roomInfo = data;
+     console.log(roomInfo)
+     if(roomName=="frontYard"){
+       $.get("credits.html",function(data){
+ roomInfo.targets[0].postText=[data,""]
+})
+
+
+     }
      $("#roomSVG").load("img/rooms/" + data.roomImage, roomSvgLoad);
 
      resizeWindow();
@@ -268,10 +276,9 @@ console.log(value.Name)
 }
 
 function makeClickEvents() {
-  $(".clickable").on("click", function(evt) {
-    console.log("click")
-
-    if (!bubbleActive || state.currentRoom == "hallway") {
+ $(".clickable").on("click", function(evt) {
+    console.log($("#thoughtBubble").is(":visible"))
+    if (!$("#thoughtBubble").is(":visible") || state.currentRoom == "hallway") {
       bubbleActive = true;
 
 
@@ -288,17 +295,14 @@ function makeClickEvents() {
         $('#thoughtHeader').show();
         closeBubble(clickedItem, "preText")
       }
-    }
+}
   });
 
-      $('#roomSVG').off("mouseup").on("mouseup", function(e) {
+//      $('#roomSVG > *').not( ".clickable" ).off("mouseup").on("mouseup", function(e) {
+//console.log($(e.target).parent())
 
-if(!$(e.target).hasClass('clickable')){
-
-
-          $("#close").trigger("click");
-}
-});
+//          $("#close").trigger("click");
+//});
 
 
 
@@ -306,7 +310,7 @@ if(!$(e.target).hasClass('clickable')){
 }
 
 function itemClicked(clickedItem) {
-//$(".clickable").css("pointer-events", "none");
+$(".clickable").css("pointer-events", "none");
   var item = roomInfo.targets[lookup[clickedItem]];
   var fps = item.frameRate || defaultFrameRate;
   if ("audioFile" in item) {
@@ -387,13 +391,19 @@ closeBubble(item.Name, thoughtType) });
 
   function displayThought(item, thoughtType) {
      removeHighlightCopy()
-    console.log(item.Name, state.currentRoom)
+   console.log(item) 
+   if (item[thoughtType].length<2){
+
+        item[thoughtType] =[item[thoughtType][0],item[thoughtType][0]]
+        console.log(   item[thoughtType])
+	    }
     if (state.currentRoom == "hallway") {
-      console.log(item.Name)
       highlightComponent("#" + item.Name)
     }
-    if (item[thoughtType][state.phase] != "") {
-      bubbleActive = true;
+    if (item[thoughtType][state.phase] == "") {
+
+	item[thoughtType][state.phase]="This is not a trigger, keep looking!";
+	}
       $("#thoughtBubble").css({
         "left" : (item.xValue || 5) + "%",
         "top" : (item.yValue || 20) + "%"
@@ -418,20 +428,17 @@ closeBubble(item.Name, thoughtType) });
           additionalText += roomInfo.completedText;
         }
         $('#thoughtHeaderText').html("&nbsp;" + headerText + " " + itemText)
-        var whichText=state.phase;
-        if (item[thoughtType].length<2){
-          whichText=0;
-          if(state.currentRoom =="frontYard"){
-    $('#thoughtHeader').hide();
+    
+        if(state.currentRoom =="frontYard"){
 
-          }
+  $('#thoughtHeader').hide();
+
         }
         $("#thoughtBubble p")
-            .html(item[thoughtType][whichText] + additionalText)
+            .html(item[thoughtType][state.phase] + additionalText)
 
 
       }
-    }
   }
 }
 

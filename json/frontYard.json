@@ -3,10 +3,7 @@
   "roomImage": "frontYard.svg",
   "nextRoom": "frontYard",
   "targets": [{
-    "postText": ["<div id=\"credits\">'<div id=\"creators\"> <p><span style=\"font-size:16px\"><strong><big>Conceptualized by<\/big><\/strong><\/span><\/p>\n\n\n<p><span style=\"font-size:24px\"><big>Lisa Romard MS.,CPNP, ANP, AE-C <\/big><\/span><\/p>\n</div>
-      \n\n<div id=\"developers\">\n<p><strong><span style=\"font-size:16px\"><big>Content &amp; Design Developers<\/big><\/span><\/strong><\/p>\n\n<p><span style=\"font-size:24px\"><big>Lisa Romard MS., CPNP, ANP, AE-C<\/big><\/span><\/p>\n\n<p><span style=\"font-size:24px\"><big>Linda Cimino Ed.D., M.S., CPNP, ANP, CCRC, CHSE<\/big><\/span><\/p>\n<\/div>
-      \n\n
-      <div id=\"crawl\"><p><strong><span style=\"font-size:16px\"><big>Technical &amp; Graphic design<\/big><\/span><\/strong><\/p>\n\n<p><span style=\"font-size:14px\"><big>Paul St. Denis<\/big><\/span><\/p>\n\n<p><span style=\"font-size:14px\"><big>Kari Barry<\/big><\/span><\/p>\n\n<p><span style=\"font-size:14px\"><big>Razz Joseph<\/big><\/span><\/p>\n\n<p><span style=\"font-size:14px\"><big>Gregory Lucci<\/big><\/span><\/p>\n\n<p><span style=\"font-size:14px\"><big>James Palmeri<\/big><\/span><\/p>\n\n<p><span style=\"font-size:14px\"><big>Anna Sklyarova<\/big><\/span><\/p>\n\n<p><span style=\"font-size:14px\"><big>Shu Wen Yang<\/big><\/span><\/p>\n\n<p><span style=\"font-size:14px\"><big>Content Review<\/big><\/span><\/p>\n\n<p><span style=\"font-size:14px\"><big>Anne Little<\/big><\/span><\/p>\n\n<p><span style=\"font-size:14px\"><big>Claudia Guglielmo<\/big><\/span><\/p>\n\n<p><span style=\"font-size:14px\"><big>Jignisha Patel MS., RN, PNP-SB SON<\/big><\/span><\/p>\n\n<p><span style=\"font-size:14px\"><big>Christy Etsch BSN., RN- SB SON<\/big><\/span><\/p>\n\n<p><span style=\"font-size:14px\"><big>Asthma Coalition of Long Island (ACLI) Asthma Educators<\/big><\/span><\/p></div>'</div>"],
+    "postText": ["fdsgjhfgjdfhjgfh"],
     "Name": "Girl",
     "loopAmount": 1,
     "yValue": 10,

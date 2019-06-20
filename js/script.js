@@ -145,7 +145,9 @@ function loadNewRoom(roomName) {
      console.log(roomInfo)
      if(roomName=="frontYard"){
        $.get("credits.html",function(data){
- roomInfo.targets[0].postText=[data,""]
+      roomInfo.targets[0].postText=[data,""]
+      $("#help").hide();
+
 })
 
 
@@ -390,26 +392,25 @@ function thoughts(item, thoughtType) {
 closeBubble(item.Name, thoughtType) });
 
   function displayThought(item, thoughtType) {
+
      removeHighlightCopy()
-   console.log(item) 
+   console.log(item)
    if (item[thoughtType].length<2){
 
         item[thoughtType] =[item[thoughtType][0],item[thoughtType][0]]
-        console.log(   item[thoughtType])
 	    }
     if (state.currentRoom == "hallway") {
       highlightComponent("#" + item.Name)
     }
-    if (item[thoughtType][state.phase] == "") {
 
-	item[thoughtType][state.phase]="This is not a trigger, keep looking!";
-	}
       $("#thoughtBubble").css({
         "left" : (item.xValue || 5) + "%",
         "top" : (item.yValue || 20) + "%"
       });
       $("#thoughtBubble").addClass("thoughtPop");
+      if(item[thoughtType][state.phase]  || state.edit == "true"){ //text not blank or blank but editable
       $("#thoughtBubble").css("display", "inline");
+      }
       if (state.edit == "true") {
 
         createEditor($('#thoughtBubble p'), item, thoughtType)
@@ -428,7 +429,7 @@ closeBubble(item.Name, thoughtType) });
           additionalText += roomInfo.completedText;
         }
         $('#thoughtHeaderText').html("&nbsp;" + headerText + " " + itemText)
-    
+
         if(state.currentRoom =="frontYard"){
 
   $('#thoughtHeader').hide();
@@ -439,7 +440,7 @@ closeBubble(item.Name, thoughtType) });
 
 
       }
-  }
+}
 }
 
 function createEditor(el, item, thoughtType) {

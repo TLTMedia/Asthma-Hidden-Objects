@@ -437,7 +437,7 @@ to {
       top: 0%
     }
     100% {
-      top: -80%
+      top: -95%
     }
 
   }
@@ -476,10 +476,23 @@ animation: fadeIn,crawl;
   animation-timing-function: linear;
   animation-fill-mode: forwards,forwards;
 }
+
+#sources{
+  opacity:0;
+  text-align: center;
+ animation: fadeIn;
+ top:0;
+  animation-duration: 2s;
+  animation-iteration-count:1;
+  animation-delay: 24s;
+  animation-fill-mode: forwards;
+}
+
 #creators,#developers{
 position: relative;
-
-
+}
+#sources{
+  position:absolute
 }
 #credits{
 position:relative;

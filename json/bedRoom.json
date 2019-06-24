@@ -23,7 +23,7 @@
     "hint": "Careful when you play, I can take your breath away",
     "hintXValue": 23,
     "audioFile": "soccor.mp3",
-    "thumbScale": "translate(-490,-3700) scale(4.7)"
+    "thumbScale": "translate(-490,-3550) scale(4.7)"
   }, {
     "Name": "Bed",
     "bannerText": "Allergen \u2013 Dust Mites (Bedding)",
@@ -116,7 +116,7 @@
     "isTrigger": true,
     "hint": "Where you don\u2019t clean, that\u2019s where I\u2019ll be seen",
     "hintXValue": 85,
-    "thumbScale": "translate(-3875,-4500) scale(8)",
+    "thumbScale": "translate(-4000,-4500) scale(8)",
     "audioFile": "Dust.mp3"
   }, {
     "bannerText": "Not A Trigger",

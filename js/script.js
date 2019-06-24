@@ -12,26 +12,25 @@ var stop = false;
 var frameCount = 0;
 var roomInfo;
 var bubbleActive = false;
-var phaseText = [ "Find the Triggers", "Ways to Avoid the Triggers" ];
-var thoughtHeaderText = [ "", "", "" ];
+var phaseText = ["Find the Triggers", "Ways to Avoid the Triggers"];
+var thoughtHeaderText = ["", "", ""];
 var aspect;
 var factorTranslate = 1;
 var factorScale = 1;
-var defaults =
-    {
-      "phase" : 0,
-      "edit" : false,
-      "currentItemIndex" : 0,
-      "itemsClicked" : [],
-      "currentRoom" : "hallway"
-    }
+var defaults = {
+  "phase": 0,
+  "edit": false,
+  "currentItemIndex": 0,
+  "itemsClicked": [],
+  "currentRoom": "hallway"
+}
 var state = loadState();;
 //var state;
 
 /* Tutorial - Hallway
   Created three items for the hallway to show the mechanics
 */
-var tutorialItems = [ "Carpet", "Mold", "Rat" ];
+var tutorialItems = ["Carpet", "Mold", "Rat"];
 var tutorialItemCount = 0;
 
 // Beginning room defaults
@@ -41,24 +40,30 @@ var tutorialItemCount = 0;
   return
 */
 function closeBubble(itemName, thoughtType) {
- var currentItem = roomInfo.targets.find(function(
-      itemIter) { return itemIter.Name == itemName; })
+  var currentItem = roomInfo.targets.find(function(
+    itemIter) {
+    return itemIter.Name == itemName;
+  })
   bubbleActive = false;
   $("#thoughtBubble").css({
-    "display" : "none"
+    "display": "none"
 
   });
- if (currentItem.isTrigger) {
-    if (state.phase == 1) {
-      disappear(currentItem);
-    }
+  if (currentItem.isTrigger) {
+
+
     if (thoughtType == "postText") {
       showTreasureBox(currentItem);
       state.currentItemIndex++;
       tutorialItemCount++;
       countTriggers(currentItem);
     }
-}
+
+    if (state.phase == 1) {
+      disappear(currentItem);
+    }
+
+  }
 }
 
 function
@@ -70,8 +75,8 @@ showPreText() {
 
 function
 loadState() {
- var loadstate;
- var dict = getParameters()
+  var loadstate;
+  var dict = getParameters()
   if (Object.keys(dict).length) {
     localStorage.clear();
     loadstate = {};
@@ -82,42 +87,47 @@ loadState() {
     loadstate = {}
   }
 
-  Object.keys(dict).forEach(function(key) { loadstate[key] = dict[key] });
+  Object.keys(dict).forEach(function(key) {
+    loadstate[key] = dict[key]
+  });
 
   Object.keys(defaults).forEach(function(key) {
     if (!loadstate.hasOwnProperty(key)) {
       loadstate[key] = defaults[key];
     }
   })
-return loadstate;
+  return loadstate;
 }
 
 function
-getParameterByName() { return false; }
+getParameterByName() {
+  return false;
+}
 
 function
 getParameters() {
   var dict = {};
   decodeURIComponent(window.location.search)
-      .substring(1)
-      .split("&")
-      .forEach(function(val, idx) {
+    .substring(1)
+    .split("&")
+    .forEach(function(val, idx) {
         nameVal = val.split("=");
         nameVal[1]
 
-            if (nameVal[0] == "itemsClicked") {
+        if (nameVal[0] == "itemsClicked") {
           dict[nameVal[0]] = JSON.parse(decodeURIComponent(nameVal[1]));
-        }
-        else dict[nameVal[0]] = nameVal[1]
+        } else dict[nameVal[0]] = nameVal[1]
       }
 
-      );
+    );
   return dict;
 }
 
 var fps, fpsInterval, startTime, now, then, elapsed;
 
-$(function() { loadNewRoom(state.currentRoom); });
+$(function() {
+  loadNewRoom(state.currentRoom);
+});
 
 function loadNewRoom(roomName) {
   totalTriggers = 0;
@@ -138,24 +148,26 @@ function loadNewRoom(roomName) {
     document.getElementById("triggersLeft").style.backgroundColor = "#b01616";
   }
   $('#phaseNum')
-      .html(`Phase ${parseInt(state.phase) + 1.0}: ${phaseText[state.phase]}`);
+    .html(`Phase ${parseInt(state.phase) + 1.0}: ${phaseText[state.phase]}`);
   var Dev = "";
   $.getJSON("json/" + roomName + Dev + ".json", function(data) {
-     roomInfo = data;
-     console.log(roomInfo)
-     if(roomName=="frontYard"){
-       $.get("credits.html",function(data){
-      roomInfo.targets[0].postText=[data,""]
-      $("#help").hide();
+    roomInfo = data;
+    console.log(roomInfo)
+    if (roomName == "frontYard") {
+      $.get("credits.html", function(data) {
+        roomInfo.targets[0].postText = [data, ""]
+        $("#help").hide();
 
-})
+      })
 
 
-     }
-     $("#roomSVG").load("img/rooms/" + data.roomImage, roomSvgLoad);
+    }
+    $("#roomSVG").load("img/rooms/" + data.roomImage, roomSvgLoad);
 
-     resizeWindow();
-   }).fail(function() { console.log("I failed", "img/rooms/" + data) })
+    resizeWindow();
+  }).fail(function() {
+    console.log("I failed", "img/rooms/" + data)
+  })
 }
 
 function removeHighlightCopy() {
@@ -184,7 +196,7 @@ function roomSvgLoad() {
   var filter = document.createElementNS("http://www.w3.org/2000/svg", "filter");
   filter.setAttribute("id", "blurMe");
   var gaussianFilter =
-      document.createElementNS("http://www.w3.org/2000/svg", "feGaussianBlur");
+    document.createElementNS("http://www.w3.org/2000/svg", "feGaussianBlur");
   gaussianFilter.setAttribute("in", "SourceGraphic");
   gaussianFilter.setAttribute("stdDeviation", "2");
   filter.appendChild(gaussianFilter);
@@ -216,9 +228,9 @@ function roomSvgLoad() {
       }
 
       cubbyItem.appendTo(cubbySVG).css('opacity', opacityVal);
-console.log(value.Name)
+      console.log(value.Name)
       cubbyItemBBox =
-          document.getElementById("cubbySVG_" + value.Name).getBBox()
+        document.getElementById("cubbySVG_" + value.Name).getBBox()
 
       $("#cubbySVG_" + value.Name + ' g[id]').each(function(item, val) {
         var oldID = $(val).attr("id");
@@ -226,7 +238,7 @@ console.log(value.Name)
       })
 
       document.getElementById("cubbySVG_" + value.Name)
-          .setAttribute("transform", value.thumbScale || "");
+        .setAttribute("transform", value.thumbScale || "");
       resizeWindow();
       totalTriggers++;
     }
@@ -246,7 +258,9 @@ console.log(value.Name)
     // }
     var left = `${($(evt.currentTarget).position().left + width)-width}px`
     console.log(left)
-    $("#cubbyHint").css({left : left});
+    $("#cubbyHint").css({
+      left: left
+    });
     $('#cubbyHint').show()
     //  highlightComponent("#" + item.Name)
   })
@@ -272,13 +286,15 @@ console.log(value.Name)
 
   showPreText();
 
-  $('body').animate({"opacity" : 1}, 1000)
+  $('body').animate({
+    "opacity": 1
+  }, 1000)
 
   resizeWindow();
 }
 
 function makeClickEvents() {
- $(".clickable").on("click", function(evt) {
+  $(".clickable").on("click", function(evt) {
     console.log($("#thoughtBubble").is(":visible"))
     if (!$("#thoughtBubble").is(":visible") || state.currentRoom == "hallway") {
       bubbleActive = true;
@@ -291,20 +307,19 @@ function makeClickEvents() {
           $('#thoughtHeader').show();
           closeBubble(clickedItem, "preText")
         }
-      }
-      else {
+      } else {
         itemClicked(clickedItem)
         $('#thoughtHeader').show();
         closeBubble(clickedItem, "preText")
       }
-}
+    }
   });
 
-//      $('#roomSVG > *').not( ".clickable" ).off("mouseup").on("mouseup", function(e) {
-//console.log($(e.target).parent())
+  //      $('#roomSVG > *').not( ".clickable" ).off("mouseup").on("mouseup", function(e) {
+  //console.log($(e.target).parent())
 
-//          $("#close").trigger("click");
-//});
+  //          $("#close").trigger("click");
+  //});
 
 
 
@@ -312,7 +327,7 @@ function makeClickEvents() {
 }
 
 function itemClicked(clickedItem) {
-$(".clickable").css("pointer-events", "none");
+  $(".clickable").css("pointer-events", "none");
   var item = roomInfo.targets[lookup[clickedItem]];
   var fps = item.frameRate || defaultFrameRate;
   if ("audioFile" in item) {
@@ -325,27 +340,33 @@ $(".clickable").css("pointer-events", "none");
 function disappear(item) {
 
   $("#" + item.Name)
-      .animate({
-        opacity : 0,
+    .animate({
+        opacity: 0,
       },
-               1000, function() {
-$("#" + item.Name).css("display", "none");
-               });
-$("#" + item.Name).css("pointer-events", "none");
+      1000,
+      function() {
+          $("#" + item.Name),remove();
+      //  $("#" + item.Name).css("display", "none");
+      });
+  $("#" + item.Name).css("pointer-events", "none");
 }
+
 function showTreasureBox(item) {
 
   var xerox = $("#cubbySVG_" + item.Name);
   xerox.animate({
-    opacity : 1,
-  },
-                1000, function() { transition(); });
+      opacity: 1,
+    },
+    1000,
+    function() {
+      transition();
+    });
 }
 
 function transition() {
 
   console.log(state.triggersLeft, state.phase, state.currentRoom,
-              roomInfo.nextRoom)
+    roomInfo.nextRoom)
   if (!state.triggersLeft) {
     state.triggersLeft = totalTriggers;
     if (state.phase == 1) {
@@ -357,8 +378,7 @@ function transition() {
 
     loadNewRoom(state.currentRoom);
     //  return;
-  }
-  else {
+  } else {
     showPreText();
   }
   localStorage.setItem("state", JSON.stringify(state))
@@ -388,80 +408,85 @@ function thoughts(item, thoughtType) {
 
   $("#close").off("click");
   $("#close").on("click",
-                 function(evt) { $(".clickable").css("pointer-events", "auto");
-closeBubble(item.Name, thoughtType) });
+    function(evt) {
+      $(".clickable").css("pointer-events", "auto");
+      closeBubble(item.Name, thoughtType)
+    });
 
   function displayThought(item, thoughtType) {
 
-     removeHighlightCopy()
-   console.log(item)
-   if (item[thoughtType].length<2){
+    removeHighlightCopy()
+    console.log(item)
+    if (item[thoughtType].length < 2) {
 
-        item[thoughtType] =[item[thoughtType][0],item[thoughtType][0]]
-	    }
+      item[thoughtType] = [item[thoughtType][0], item[thoughtType][0]]
+    }
     if (state.currentRoom == "hallway") {
       highlightComponent("#" + item.Name)
     }
 
-      $("#thoughtBubble").css({
-        "left" : (item.xValue || 5) + "%",
-        "top" : (item.yValue || 20) + "%"
-      });
-      $("#thoughtBubble").addClass("thoughtPop");
-      if(item[thoughtType][state.phase]  || state.edit == "true"){ //text not blank or blank but editable
+    $("#thoughtBubble").css({
+      "left": (item.xValue || 5) + "%",
+      "top": (item.yValue || 20) + "%"
+    });
+    $("#thoughtBubble").addClass("thoughtPop");
+    if (item[thoughtType][state.phase] || state.edit == "true") { //text not blank or blank but editable
       $("#thoughtBubble").css("display", "inline");
+    }
+    if (state.edit == "true") {
+
+      createEditor($('#thoughtBubble p'), item, thoughtType)
+
+    } else {
+
+      var itemText = item.Title || item.bannerText || "None"
+      var headerText = thoughtHeaderText[state.phase].toUpperCase()
+      var pre = false;
+      if (state.currentRoom == "hallway" && state.c) {
+        headerText = "Found Item:"
       }
-      if (state.edit == "true") {
 
-        createEditor($('#thoughtBubble p'), item, thoughtType)
+      if (state.triggersLeft == 1 && state.phase == 1 &&
+        thoughtType == "postText") {
+        additionalText += roomInfo.completedText;
+      }
+      $('#thoughtHeaderText').html("&nbsp;" + headerText + " " + itemText)
 
-      } else {
+      if (state.currentRoom == "frontYard") {
 
-        var itemText = item.Title || item.bannerText || "None"
-        var headerText = thoughtHeaderText[state.phase].toUpperCase()
-        var pre = false;
-        if (state.currentRoom == "hallway" && state.c) {
-          headerText = "Found Item:"
-        }
-
-        if (state.triggersLeft == 1 && state.phase == 1 &&
-            thoughtType == "postText") {
-          additionalText += roomInfo.completedText;
-        }
-        $('#thoughtHeaderText').html("&nbsp;" + headerText + " " + itemText)
-
-        if(state.currentRoom =="frontYard"){
-
-  $('#thoughtHeader').hide();
-
-        }
-        $("#thoughtBubble p")
-            .html(item[thoughtType][state.phase] + additionalText)
-
+        $('#thoughtHeader').hide();
 
       }
-}
+      $("#thoughtBubble p")
+        .html(item[thoughtType][state.phase] + additionalText)
+
+
+    }
+  }
 }
 
 function createEditor(el, item, thoughtType) {
   el.html('<form><textarea id=txtArea></textarea> </form>');
 
   $('textarea#txtArea')
-      .ckeditor(
-          {height : "300px", toolbarStartupExpanded : true, width : "100%"});
+    .ckeditor({
+      height: "300px",
+      toolbarStartupExpanded: true,
+      width: "100%"
+    });
 
   $('textarea').val(item[thoughtType][state.phase])
   $('form').submit(function(event) {
     $.post("save.php", {
-       name : item.Name,
-       room : state.currentRoom,
-       phase : state.phase,
-       textType : thoughtType,
-       text : $('textarea').val()
-     }).done(function(data) {
+      name: item.Name,
+      room: state.currentRoom,
+      phase: state.phase,
+      textType: thoughtType,
+      text: $('textarea').val()
+    }).done(function(data) {
       var location = "?edit=true&item=" + item.Name +
-                     "&currentRoom=" + state.currentRoom +
-                     "&phase=" + state.phase;
+        "&currentRoom=" + state.currentRoom +
+        "&phase=" + state.phase;
       console.log(location);
       window.location = location;
     });
@@ -486,7 +511,9 @@ function changePhase() {
 }
 
 // Show TriggersLeft on the top left of the screen
-function displayTriggersLeft() { $('#triggersLeft').html(state.triggersLeft); }
+function displayTriggersLeft() {
+  $('#triggersLeft').html(state.triggersLeft);
+}
 // Hide TriggersLeft and phaseNum on the top left of the screen
 function hideLRBubbles() {
   $('#triggersLeft').hide();
@@ -523,29 +550,28 @@ function animate() {
       var selector = "#" + itemID;
       var animationLength = 0
       $("[id^='" + itemID + "']")
-          .each(function(idx, val) {
+        .each(function(idx, val) {
             if (RegExp(itemID + '[0-9]*$').test(val.id)) {
               $(val).attr("style", "display:none")
               animationLength++;
             }
           }
 
-          )
+        )
 
       if (item.animationFrame <=
-          (animationLength * (animationItem.loopAmount + 1))) {
+        (animationLength * (animationItem.loopAmount + 1))) {
         // var displayFrame = (animationFrame %
         // animationItem.totalAnimationFrames) + 1 wacky cal
         var displayFrame =
-            Math.abs((item.animationFrame + animationLength - 2) %
-                         ((animationLength - 1) * 2) -
-                     (animationLength - 1)) +
-            1
+          Math.abs((item.animationFrame + animationLength - 2) %
+            ((animationLength - 1) * 2) -
+            (animationLength - 1)) +
+          1
 
         $(selector + displayFrame).attr("style", "display:inline")
         item.animationFrame++
-      }
-      else {
+      } else {
         thoughts(item, "postText");
         removeHighlightCopy();
         delete animatingList[index]

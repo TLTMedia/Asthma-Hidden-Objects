@@ -1,0 +1,13 @@
+{
+  "bannerText": "Credits",
+  "roomImage": "frontYard.svg",
+  "nextRoom": "frontYard",
+  "targets": [{
+    "postText": ["fdsgjhfgjdfhjgfh"],
+    "Name": "Girl",
+    "loopAmount": 1,
+    "yValue": 10,
+    "xValue": 10,
+    "frameRate": 5
+  }]
+}

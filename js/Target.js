@@ -6,6 +6,7 @@ class Target {
     this.currentLoop = 1;
 
     this.targetInfo = targetInfo;
+    this.targetInfo.isTrigger=this.targetInfo.isTrigger||false;
     this.loopAmount = this.targetInfo.loopAmount || 1;
     this.targetSelector = $(`#roomSVG  #${this.targetInfo.Name}`)
 
@@ -67,7 +68,6 @@ class Target {
       }
 
       this.targetModalDialog = new ModalDialog(this.room, this.targetInfo, "postText", this.room.showHeader, this.targetInfo.isTrigger)
-
       this.targetModalDialog.displayTargetInfo()
 
 
@@ -97,8 +97,10 @@ class Target {
     framesSelector.hide();
 
     var currentLayer = $(`#${this.targetInfo.Name}-${this.currentFrame}`)
+
     $(`#${this.targetInfo.Name}-${this.currentFrame}`).show();
-    if (currentLayer.length == 1) {
+
+    if (currentLayer.length >= 1) {
 
       this.currentFrame++
       setTimeout(() => this.animate(true), 2000 / this.targetInfo.frameRate)

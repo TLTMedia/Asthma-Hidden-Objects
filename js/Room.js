@@ -44,10 +44,10 @@ class Room {
 makeRoomTypeException()
 
 {
+console.log(this.roomName)
+  if (this.roomName == "Front%20Yard") {
 
-  if (this.roomName == "frontYard") {
-
-
+setTimeout(()=>this.house.Room.targets[0].animate(false),1000);
 
     $.get("credits.html", (data) => {
 
@@ -70,7 +70,7 @@ makeRoomTypeException()
     })
   }
 
-  if (this.roomName == "hallway") {
+  if (this.roomName == "Hallway") {
     this.setupTarget(this.roomInfo.targets[this.currentTargetId])
     var md = new ModalDialog(this, this.roomInfo.targets[this.currentTargetId], "preText", false)
     md.displayTargetInfo()

@@ -5,9 +5,9 @@ body {
   -ms-user-select: none;
   user-select: none;
 }
-#screen{
-position: absolute;
 
+#screen {
+  position: absolute;
 }
 
 #roomSVG {
@@ -18,22 +18,22 @@ position: absolute;
 
 #helpButton {
   position: absolute;
-    padding: .5rem;
-    font-family: "Lucida Sans", sans-serif;
-    font-size: 2em;
-    border-radius: 100%;
-    border: solid .3rem #666666;
-    background-color: #fff;
-    float: left;
-    z-index: 1;
-    text-align: center;
-    left:19%;
-    bottom:84%;
-    transition: background-color 0.5s ease;
+  padding: .5rem;
+  font-family: "Lucida Sans", sans-serif;
+  font-size: 2em;
+  border-radius: 100%;
+  border: solid .3rem #666666;
+  background-color: #fff;
+  float: left;
+  z-index: 1;
+  text-align: center;
+  left: 20.5%;
+  bottom: 84%;
+  transition: background-color 0.5s ease;
 }
 
-#helpButton:hover #help{
-display:block;
+#helpButton:hover #help {
+  display: block;
 }
 
 #helpButton: hover {
@@ -42,39 +42,34 @@ display:block;
 
 #help {
   display: none;
-    width: 35%;
-    height: auto;
-    background-color: #555;
-    color: #fff;
-    text-align: left;
-    border-radius: .6rem;
-    padding: .8rem 1rem;
-    position: absolute;
-    z-index: 130;
-    margin-left: -3em;
-    left:10%;
-    bottom:-10%;
-    transition: background-color 0.5s ease;
-
+  width: 35%;
+  height: auto;
+  background-color: #555;
+  color: #fff;
+  text-align: left;
+  border-radius: .6rem;
+  padding: .8rem 1rem;
+  position: absolute;
+  z-index: 130;
+  margin-left: -3em;
+  left: 10%;
+  bottom: -10%;
+  transition: background-color 0.5s ease;
 }
-
 
 #help {
   font-size: 2rem;
 }
 
-#leftBubble.finalCreditsParent{
-  display:flex;
-  justify-content:center;
-height:50rem;
+#leftBubble.finalCreditsParent {
+  display: flex;
+  justify-content: center;
+  height: 50rem;
 }
 
-#thoughtBubble.finalCreditsBubble{
-    width: 40%;
-
-
+#thoughtBubble.finalCreditsBubble {
+  width: 40%;
 }
-
 
 #treasureChest {
   position: absolute;
@@ -116,6 +111,7 @@ ul {
   display: none;
   position: absolute;
   text-align: center;
+  font-family: " Verdana", sans-serif;
   font-size: 1.5rem;
   padding: 1.5rem;
   width: auto;
@@ -123,14 +119,14 @@ ul {
   color: #2b2b2b;
   z-index: 1;
   bottom: -98%;
-  border-radius:10%;
+  border-radius: 10%;
 }
 
 #triggersLeft {
   position: absolute;
   top: 1.25rem;
   left: 2.2rem;
-  font-family: "Lucida Sans", sans-serif;
+  font-family: "Verdana", sans-serif;
   font-size: 2em;
   color: white;
   padding: 1rem;
@@ -178,37 +174,45 @@ ul {
     transform: scale(1);
   }
 }
+
 /* Font Styling for frontYard */
 #credits .style1 {
+  font-family: " Verdana", sans-serif;
   font-size: 2.5rem;
   font-weight: bold;
 }
 
 #credits .style2 {
+  font-family: " Verdana", sans-serif;
   font-size: 3rem;
 }
 
 #credits .style3 {
+  font-family: " Verdana", sans-serif;
   font-size: 1.8rem;
   font-weight: bold;
 }
 
 #credits .style4 {
+  font-family: " Verdana", sans-serif;
   font-size: 1.4rem;
 }
 
 #credits .style5 {
+  font-family: " Verdana", sans-serif;
   font-size: 1.2rem;
   font-style: italic;
   color: #036187
 }
 
 #credits .style6 {
+  font-family: " Verdana", sans-serif;
   font-size: 2.3rem;
   font-weight: bold;
 }
 
 #credits .style7 {
+  font-family: " Verdana", sans-serif;
   font-size: 2rem;
 }
 
@@ -226,7 +230,7 @@ ul {
 #creators {
   opacity: 0;
   text-align: center;
-  top: 25%;
+  top: 10%;
   animation: fadeIn, fadeOut;
   animation-duration: 2s, 2s;
   animation-iteration-count: 1, 1;
@@ -237,7 +241,7 @@ ul {
 #developers {
   opacity: 0;
   text-align: center;
-  top: -20%;
+  top: -50%;
   animation: fadeIn, fadeOut;
   animation-duration: 2s, 2s;
   animation-iteration-count: 1, 1;
@@ -247,7 +251,7 @@ ul {
 
 #technicaldesign {
   position: relative;
-  top: -90%;
+  top: -140%;
   opacity: 0;
   text-align: center;
   animation: fadeIn, fadeOut;
@@ -290,8 +294,6 @@ ul {
 
 #credits {
   position: relative;
-
-
   overflow: hidden;
 }
 
@@ -308,7 +310,7 @@ ul {
 
 @keyframes fadeIn {
   from {
-  /* transform: scale(0); */
+    /* transform: scale(0); */
     opacity: 0;
   }
 
@@ -317,19 +319,16 @@ ul {
     opacity: 1;
   }
 
-@keyframes transform {
-  from {
-   transform: scale(0);
+  @keyframes transform {
+    from {
+      transform: scale(0);
+    }
 
-  }
+    to {
+      transform: scale(1);
+    }
 
-  to {
-    transform: scale(1);
-
-}
-
-
-  /*
+    /*
     90% {
         opacity:1;
 
@@ -338,14 +337,14 @@ ul {
         opacity:0;
 
     } */
-}
-
-@keyframes crawl {
-  0% {
-    top: 0%
   }
 
-  100% {
-    top: -100%
+  @keyframes crawl {
+    0% {
+      top: 0%
+    }
+
+    100% {
+      top: -100%
+    }
   }
-}

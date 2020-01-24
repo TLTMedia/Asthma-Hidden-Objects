@@ -65,6 +65,15 @@ class ModalDialog {
 
   makeDOMItems() {
 
+
+if(this.room.house.autoplay){
+  var audioButton="audioOn"
+}
+else{
+  var audioButton="audioOff"
+}
+
+
     var thoughtHeader = $("<div/>", {
       id: "thoughtHeader",
       html: this.target.bannerText
@@ -93,14 +102,14 @@ class ModalDialog {
     })
     var audio = $("<div/>", {
       id: "AudioButton",
-      class: "audioOff"
+      class: audioButton
     })
     var audioTag = $("<audio/>", {
       id: "audioTag",
       class: this.audioPlay
     })
     var audioSource = $("<source/>", {
-      src: `audio/spokenAudio/${this.room.house.currentRoom}_${this.target.Name}.mp3`
+      src: `audio/spokenAudio/${this.textType}/${this.room.house.currentRoom}_${this.target.Name}.mp3`
     })
     var closeButton = $("<div/>", {
       id: "close",

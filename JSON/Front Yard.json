@@ -1,0 +1,14 @@
+{
+  "bannerText": "Credits",
+  "roomImage": "frontYard.svg",
+  "nextRoom": "Front Yard",
+  "targets": [{
+    "postText": ["fdsgjhfgjdfhjgfh"],
+    "Name": "Girl",
+    "audioFile": "applause.mp3",
+    "loopAmount": 3,
+    "yValue": 10,
+    "xValue": 10,
+    "frameRate": 10
+  }]
+}

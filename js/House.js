@@ -1,14 +1,27 @@
 class House {
 
   constructor() {
-    this.currentRoom = "hallway"
-    this.autoplay=false;
-    this.isTutorial = true;
+    this.autoplay = false;
+    this.currentRoom = "Hallway"
+    var checkLocalStorage = localStorage.getItem('currentRoom')
+    if (checkLocalStorage) {
+      this.currentRoom = checkLocalStorage
+    }
+
+
     if (window.location.hash) {
       this.currentRoom = window.location.hash.split("#")[1]
-
-      this.isTutorial = false;
     }
+    if (this.currentRoom == "Hallway") {
+      this.isTutorial = true;
+    } else {
+      this.isTutorial = false;
+
+    }
+
+
+
+
     this.loadRoom(this.currentRoom)
   }
   loadRoom() {
@@ -17,6 +30,12 @@ class House {
       $('#screen').css({
         opacity: 0
       });
+  $(document).attr("title",`Asthma Trigger House ${this.currentRoom}`);
+    }).fail(function() {
+      window.location = "./#Hallway";
+      location.reload();
     });
+
+    localStorage.setItem('currentRoom', this.currentRoom)
   }
 }

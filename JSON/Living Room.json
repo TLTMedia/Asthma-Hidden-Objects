@@ -1,0 +1,161 @@
+{
+  "roomImage": "LivingRoom.svg",
+  "nextRoom": "Bathroom",
+  "completedText": " <br/> Congratulations!  You found and learned about the 11 Living Room Triggers and Ways to Avoid!!  Now you are going into the Bathroom.  Enjoy finding and learning!!",
+  "targets": [{
+    "bannerText": "Allergen \u2013 Mold (Plant)",
+    "postText": ["  <strong>Mold </strong>can grow in the soil of indoor plants and outside in soil and leaves.  <ul> <li>  Mold, fungi or spores that live on plants sometimes can&rsquo;t be seen with the eye. Outside mold is commonly found in soil and leaves.          </li> <li>  Mold can go into the air and be breathed in.   </li> <li>  Mold can be an allergy trigger and can cause symptoms to flare for some people with asthma.  </li> <li>  Mold grows in areas of moisture and high humidity.  </li></ul>", "<strong>Mold: How to avoid or reduce this trigger:</strong>  <ul> <li>  Do not overwater plants. When soil is moist, do not water.  Only use plants that do not need misting.  </li> <li>  Do not use humidifiers or vaporizers too much as they can be a source of moisture and mold growth.  </li> <li>  Remove or reduce the number of indoor plants.  </li> <li>  Limit or avoid outside exposure to molds &amp; leaves.  </li></ul>"],
+    "Name": "Plant",
+    "audioFile": "Plant.mp3",
+    "totalAnimationFrames": 2,
+    "frameRate": 15,
+    "loopAmount": 3,
+    "isTrigger": true,
+    "hint": "I can grow in cool and moist spots, like soil",
+    "hintXValue": 14,
+    "thumbScale": "translate(-3400,-1500) scale(3.5)"
+  }, {
+    "bannerText": "Not A Trigger",
+    "postText": ["     Bubbles says Hi. Keep looking! "],
+    "Name": "Suffy",
+    "loopAmount": 1,
+    "frameRate": 40,
+        "audioFile": "Splashingwater.mp3"
+  }, {
+    "bannerText": "Not A Trigger",
+    "postText": ["     These are plain shoes, they not an asthma trigger. Keep looking! "],
+    "Name": "Shoes"
+  }, {
+    "bannerText": "Not A Trigger",
+    "postText": ["     This is a wall phone, it is not an asthma trigger. Keep looking! ", "     This is a wall phone, it is not an asthma trigger. Keep looking! "],
+    "Name": "Wallphone",
+    "audioFile": "WallPhone.mp3"
+  }, {
+    "bannerText": "Not A Trigger",
+    "postText": ["     This is a laptop, it is not an asthma trigger. Keep looking! ", "     This is a laptop. Not a trigger.  "],
+    "Name": "Laptop"
+  }, {
+    "bannerText": "Not A Trigger",
+    "postText": ["This is a glass of water, it is not an asthma trigger. Keep looking!"],
+    "Name": "Water"
+  }, {
+    "bannerText": "Airway Irritation \u2013 Exercise (Backpack)",
+    "postText": [" <strong>Physical activity </strong>can trigger asthma symptoms for some people.  <ul> <li>  The asthma symptoms are known as Exercise-Induced Bronchoconstriction /Asthma (EIB/EIA).  </li> <li>  EIB/EIA symptoms are described as problems with breathing during or after exercise.  </li> <li>  Exercising in extreme air temperatures or poor air quality can worsen symptoms for some people.  </li> <li>  Even if you have asthma, it is important to exercise to stay healthy.  </li></ul>", " <span style=\"font-size:14.0pt\"></span>   <strong>Exercise Induced Airway Irritation: How to avoid or reduce this trigger</strong>  <ul> <li>  Talk to the health care provider to make an exercise plan.   </li> <li>  Some people with asthma may need to take medication that helps keep their asthma in control when they exercise.   </li> <li>  If you must take asthma medicine before, during, or after exercise, keep asthma inhaler and spacer ready.    </li> <li>  Be careful when exercising outside as changes in weather, allergens in the air, and air quality can affect asthma too.  </li></ul>    "],
+    "isTrigger": true,
+    "Name": "Sports",
+    "frameRate": 20,
+    "stopAtEnd": true,
+    "hint": "Careful when you play, I can take your breath away",
+    "hintXValue": 23,
+    "audioFile": "soccer.mp3",
+    "thumbScale": "translate(-490,-3700) scale(4.7)"
+  }, {
+    "bannerText": "I have Asthma",
+    "postText": [" I have asthma and lying on this rug, breathing in dust and smoke, is making my asthma flare up. Keep looking for my asthma triggers! ", "     I&#39;m starting to feel better. Keep getting rid of my triggers! "],
+    "Name": "Girl",
+    "totalAnimationFrames": 2,
+    "loopAmount": 2,
+    "audioFile": "femalesneeze.mp3"
+  }, {
+    "bannerText": "Inhaled Irritant - Smoking (Man) ",
+    "postText": ["<strong>Third hand smoke or vapors </strong>are the tiniest parts (residue) of the smoked or vaped tobacco cigarette, e-cigarette, cigar or pipe that remains after it has been put out.   <ul> <li>  They can cling to a person&rsquo;s hair, skin, and clothes.  </li> <li>  They can be found on surfaces like furniture, drapes, bedding, carpets, walls, windows, toys and inside of cars.  </li></ul>", "     <strong>Tobacco Smoke: How to avoid or reduce this trigger:</strong>  <ul> <li>  The only way to protect non-smokers from third hand smoke or vapors is to create a smoke and vape-free environment.  </li> <li>  Use cover up clothing, pull back hair, wear a hat while smoking or vaping outside and leave that clothing outside the home.  </li> <li>  Change your clothes, wash hands and face, and rinse mouth after smoking or vaping.  </li></ul>"],
+    "isTrigger": true,
+    "totalAnimationFrames": 5,
+    "frameRate": 10,
+    "stopAtEnd": true,
+    "Name": "Man",
+    "hint": "I\u2019m bad for your lungs and those around you",
+    "hintXValue": 32,
+    "audioFile": "Cough.mp3",
+    "thumbScale": "translate(-1900,-1495) scale(3)"
+  }, {
+    "bannerText": "Allergen \u2013 Pollen (Window)",
+    "postText": ["<strong>Pollens </strong>can be an allergen and may trigger asthma symptoms in some people.  <ul> <li>  Pollens can be airborne, inside as well as outside.   </li> <li>  Pollens can land on the outside and inside of cars.   </li> <li>  Pollens can collect on clothes dried outside.    </li></ul>", "<strong>Pollens: How to avoid or reduce this trigger:</strong>  <ul> <li>  Keep windows closed, use window filters or air conditioning to filter out pollens.  </li> <li>  Remove clothing worn outdoors before sitting or lying down indoors.   </li> <li>  Dust with a damp cloth often in all rooms to remove pollen.  </li> <li>  Use a vacuum with a HEPA filter to clean pollen dust.  </li></ul>        "],
+    "isTrigger": true,
+    "Name": "Window",
+    "audioFile": "pollen.mp3",
+    "thumbScale": "translate(-750,-100) scale(1.5)",
+    "hint": "\u201cI\u2019m made by plants and trees, and can make you sneeze",
+    "hintXValue": 41
+  }, {
+    "bannerText": "Allergen \u2013 Pet Hair and Dander (Dog)",
+    "postText": ["<strong>Furry pets </strong>like cats or dogs are a common allergy trigger and can cause symptoms to flare for some people with asthma.   <ul> <li>  Pets can spread allergens on surfaces and in the air inside the home.  </li> <li>  Pets can carry and spread pollens from outside into the home.  </li> <li>  Pet fur and dander can be an allergen.   </li> <li>  When your pet sits on your sofa, chairs, or rugs, you can be breathing in their shed fur, dander, and pollens.  </li></ul>", "<strong>Pet Hair and Dander: How to avoid or reduce this trigger:</strong>  <ul> <li>  If the person with asthma is allergic to pets, it is best to remove the pet from the home.  </li> <li>  Keep furry pets out of bedrooms and off upholstered furniture.  </li> <li>  Vacuum several times a week.  </li> <li>  Wash furry pets often.  </li></ul>"],
+    "isTrigger": true,
+    "Name": "Dog",
+    "totalAnimationFrames": 3,
+    "loopAmount": 2,
+    "frameRate": 10,
+    "audioFile": "Dog-bark.mp3",
+    "thumbScale": "translate(-2100,-3500) scale(5)",
+    "hint": "I\u2019m soft but shed all over",
+    "hintXValue": 50
+  }, {
+    "bannerText": "Allergen \u2013 Dust Mites (Couch)",
+    "postText": ["     <strong>Dust mites </strong>are found in upholstered furniture made from fabric that is stuffed or has padding.   <ul> <li>  Dust mites can be an allergy trigger for some people with asthma.   </li> <li>  Dust mites live in items made of thick fibers like bedding, carpets, pillows, sofa, rugs, and stuffed toys.   </li></ul>", "<strong>Dust Mites: How to avoid or reduce this trigger:</strong>  <ul> <li>  Consider changing fabric furniture to leather, wood, plastic, or vinyl.  </li> <li>  Vacuum furniture with a HEPA filter vacuum often.   </li> <li>  Avoid sleeping on furniture made from fabric and stuffing like a sofa.  </li> <li>  Keep humidity level in home under 50%.  </li></ul>    "],
+    "isTrigger": true,
+    "Name": "Couch",
+    "totalAnimationFrames": 6,
+    "frameRate": 20,
+    "audioFile": "cleanchime.mp3",
+    "thumbScale": "translate(-875,-450) scale(1.7)",
+    "hint": "I am a place to sit and relax",
+    "hintXValue": 59
+  }, {
+    "bannerText": "Inhaled Irritant \u2013 Smoke (Fireplace)",
+    "postText": [" <strong>Wood fireplaces and wood burning stoves </strong>in a home can cause smoke and soot to be in the air.   <ul> <li>  This smoke and soot can add to indoor air pollution and poor air quality.  </li> <li>  This inhaled irritant, when breathed in, can trigger asthma symptoms for some people.  </li></ul>", "     <strong>Smoke: How to avoid or reduce this trigger:</strong>  <ul> <li>  If possible, avoid using inside wood burning fireplaces and wood burning stoves.   </li><li>  Make sure the stove or fireplace is well-vented.   </li> <li>  Only burn clean, dry wood. Other materials can produce smoke and fumes that may be toxic.  </li> <li>  Have at least yearly professional cleaning and inspection of the fireplace, chimney, wood burning stoves.  </li></ul>"],
+    "isTrigger": true,
+    "audioFile": "fireplace.mp3",
+    "Name": "Fire",
+    "loopAmount": 2,
+    "frameRate": 15,
+    "thumbScale": "translate(-240,-1200) scale(2.5)",
+    "hint": "Warm and cozy, but can irritate your lungs",
+    "hintXValue": 68
+  }, {
+    "bannerText": "Dust Mites (Rug) \u2013 Allergen",
+    "postText": ["<strong>Dust mites </strong>are found in rugs and carpeting.   <ul> <li>  Dust mites can be an allergy trigger for some people with asthma.   </li> <li>  Dust mites are so tiny they can&rsquo;t be seen with the eye.  </li> <li>  Dust mites live in things made of thick fibers like bedding, carpets, pillows, sofas, rugs, and stuffed toys.  </li></ul>", "     <strong>Dust Mites: How to avoid reduce this trigger:</strong>  <ul> <li>  Remove rugs from the home.  </li> <li>  Replace carpets with tile or wood that can be damp mopped often.  </li> <li>  If you must keep the carpet, use a vacuum cleaner with a HEPA filter or a central vacuum cleaner.  </li></ul>    "],
+    "isTrigger": true,
+    "Name": "Rug",
+    "audioFile": "Rug_VacuumCleaner.mp3",
+    "thumbScale": "translate(-1000,-1600) scale(2.5)",
+    "hint": "You walk all over me",
+    "hintXValue": 77
+  }, {
+    "bannerText": "Allergen \u2013 Dust (Light Fixture)",
+    "postText": ["<strong>House dust </strong>is a common allergy trigger for some people with asthma.  <ul> <li>  Dust can cause asthma symptoms or make asthma get worse.   </li> <li>  House dust contains many tiny particles, some of which can be from pollens, mold, pet dander and hair, dust mites, and pests.   </li> <li>  Vacuum cleaners contain dust particles and can spread the dust around a room or in the air.  </li></ul>", "<strong>House dust: How to avoid or reduce this trigger</strong>  <ul> <li>  Vacuum when the person with asthma is NOT at home because dust from vacuuming can be spread back into the air.  </li> <li>  Use a vacuum cleaner with a high efficiency filter (HEPA filter vacuum) on carpets and fabric-covered furniture to reduce dust build-up.  </li> <li>  Avoid getting dust back into the air when emptying the dirt from a vacuum.  </li> <li>  Central heating and air conditioning systems may help control dust. Change filters often.  </li></ul>"],
+    "totalAnimationFrames": 8,
+    "frameRate": 15,
+    "Name": "Dust",
+    "audioFile": "Dust.mp3",
+    "isTrigger": true,
+    "thumbScale": "translate(-50,4500) scale(3.5)",
+    "hint": "Where you don\u2019t clean, that\u2019s where I\u2019ll be seen",
+    "hintXValue": 86
+  }, {
+    "bannerText": "Inhaled Irritant \u2013 Smoke (Pack of Cigarettes)",
+    "postText": ["<strong>Smoking or vaping </strong>(Tobacco - cigarettes, e-cigarettes, cigars, pipes, vapes) is unhealthy for everyone, especially people with asthma. It can be an inhaled irritant and trigger asthma for some people.  <ul> <li>  Smoke or vapor from tobacco travels through the air and can be found both indoors and outdoors.  </li> <li>  Smoke or vapor can leave behind tiny particles that can be found on clothes, all household surfaces and the inside of a car.  </li> <li>  If you can smell the smoke and vapors, you are breathing them in.  </li></ul>", "<strong>Tobacco Smoke: How to avoid or reduce this trigger:</strong>  <ul> <li>  Encourage all smokers and vapers to seek help to quit.  </li> <li>Find help at https://smokefree.gov/  </li></ul>"],
+    "isTrigger": true,
+    "totalAnimationFrames": 6,
+    "frameRate": 15,
+    "stopAtEnd": true,
+    "Name": "Cig",
+    "hint": "I have a health warning on my label",
+    "hintXValue": 95,
+    "loopAmount": 1,
+    "audioFile": "smoke.mp3",
+    "thumbScale": "translate(-13950,-10500) scale(15)"
+  }, {
+    "bannerText": "Inhaled Irritant - Smoking (Ashtray)",
+    "postText": ["<strong>Secondhand smoke or vapor </strong>are the smoke that comes off a burning item such as a cigarette.   <ul> <li>  Smoke and odors can come from ashes.   </li> <li>  They can be breathed in by another person near the smoker or vaper.   </li> <li>  The secondhand smoke can trigger asthma symptoms.  </li></ul>", "     <strong>Tobacco Smoke: How to avoid or reduce this trigger:</strong>  <ul> <li>  For those who continue to smoke or vape, always smoke or vape outside far away from the home and car.  </li> <li>  Do not smoke near another person.   </li></ul>"],
+    "isTrigger": true,
+    "totalAnimationFrames": 5,
+    "frameRate": 10,
+    "stopAtEnd": true,
+    "Name": "Ashtray",
+    "hint": "I\u2019m a cigarette\u2019s last stop",
+    "hintXValue": 90,
+    "loopAmount": 0,
+    "audioFile": "cigarette.mp3",
+    "thumbScale": "translate(-9200,-9600) scale(14)"
+  }]
+}

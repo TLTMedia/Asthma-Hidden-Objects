@@ -1,0 +1,140 @@
+{
+  "roomImage": "Bedroom.svg",
+  "nextRoom": "Living Room",
+  "completedText": "<br/> Congratulations!  You found and learned about the 8 Bedroom Triggers and Ways to Avoid!!  Now you are going into the next room (is it the Living Room.  Enjoy finding and learning!!",
+  "targets": [{
+    "Name": "Cat",
+    "bannerText": "Allergen \u2013 Pet Hair and Dander (Cat)",
+    "postText": ["<strong>Furry Pets</strong> like Dogs, Cats, Hamsters, Guinea Pigs, and Rabbits are common allergens that can trigger asthma symptoms in some people.<ul><li>Pet hair and dander can fly in the air and land on your bed and clothing.</li><li>When your pet sleeps on your bed, you are sleeping in their shed fur and dander.</li></ul>", "<strong>Furry Pets: How to avoid exposure or reduce this trigger</strong><ul><li>Keep furry pets out of bedrooms and off furniture. </li><li>Wash furry pets often to remove allergens.</li><li>Change clothes with pet hair on it to avoid transferring pet hair and dander from clothing to bedding or carpets.</li><li>Wash linens, blankets, curtains, and stuffed toys often to decrease allergens in rooms. Dust with a damp cloth.</li></ul>"],
+    "loopAmount": 3,
+    "frameRate": 10,
+    "isTrigger": true,
+    "audioFile": "Cat.mp3",
+    "thumbScale": "translate(300,275) scale(2.45)",
+    "hint": "I'm soft but shed all over",
+    "hintXValue": 15,
+    "Text": ["<span style=\"font-size:14px\"><strong>FURRY PETS (Ex: Dogs, Cats, Hamsters, Guinea Pigs, and Rabbits)</strong></span><span style=\"font-size:14px\"><strong> </strong></span><span style=\"font-size:14px\">are common pet allergens that can trigger asthma symptoms in some people.</span><span style=\"font-size:14px\">Pet hair and dander, especially cat hair, can fly in the air and land on surfaces throughout the house...</span>"]
+  }, {
+    "bannerText": "Airway Irritation \u2013 Exercise (Backpack)",
+    "postText": [" <strong>Physical activity</strong> can trigger asthma symptoms for some people.<ul><li>The asthma symptoms are known as <strong>Exercise-Induced Bronchoconstriction /Asthma (EIB/EIA).</strong></li><li>EIB/EIA symptoms are described as problems with breathing during or after exercise.</li><li>Exercising in extreme air temperatures or poor air quality can worsen symptoms for some people.</li><li>Even if you have asthma, it is important to exercise to stay healthy.</li></ul>", "<strong>Exercise Induced Airway Irritation: How to avoid or reduce this trigger </strong><ul><li>Talk to the health care provider to make an exercise plan. </li><li>Some people with asthma may need to take medication that helps keep their asthma in control when they exercise. </li><li>If you must take asthma medicine before, during, or after exercise, make sure it is ready and taken as taught.  </li><li>Be careful when exercising outside as changes in weather, allergens in the air, and air quality can affect asthma too.</li></ul>"],
+    "frameRate": 10,
+    "isTrigger": true,
+    "Name": "Sports",
+    "stopAtEnd": true,
+    "hint": "Careful when you play, I can take your breath away",
+    "hintXValue": 23,
+    "audioFile": "soccer.mp3",
+    "thumbScale": "translate(-490,-3550) scale(4.7)"
+  }, {
+    "Name": "Bed",
+    "bannerText": "Allergen \u2013 Dust Mites (Bedding)",
+    "postText": ["<strong>Dust Mites</strong> are found in beds and bedding. <ul><li>Dust mites can be an allergy trigger for some people with asthma.</li><li>Dust mites live in things made of thick fibers like bedding, carpets pillows, sofas, rugs, and stuffed toys.</li><li>Dust mites live and multiply in high humidity (high moisture).</li></ul>", " <strong>Dust Mites: How to avoid or reduce this trigger:</strong><ul><li>Cover mattress, box spring, and pillows with <em>allergy-proof zippered covers.</em></li><li>Wash and dry all bedding on high heat every week to kill the dust mites.</li><li>Keep indoor humidity (moisture) low! best  under 50%. </li><li>Limit use of humidifiers or vaporizers as they can increase moisture in the bedroom.</li></ul>"],
+    "isTrigger": true,
+    "thumbScale": "translate(-825,-600) scale(1.55)",
+    "hint": "You sleep on me every night",
+    "hintXValue": 25,
+    "audioFile": "Sheets.mp3"
+  }, {
+    "bannerText": "Not A Trigger",
+    "postText": ["This is a dresser. It is <b>not</b> an asthma trigger. Keep looking!", "This is a dresser. It is <b>not</b> an asthma trigger. Keep looking!"],
+    "Name": "Cabinet"
+  }, {
+    "bannerText": "Not A Trigger",
+    "Name": "Nightstand",
+    "postText": ["This is a nightstand. It is <strong>not</strong> an asthma trigger.Keep looking!", "This is a nightstand. It is <b>not</b> an asthma trigger. Keep looking!"]
+  }, {
+    "Name": "Dust",
+    "bannerText": "Allergen \u2013 Dust (Lamp)",
+    "postText": ["<strong>Dust</strong> can trigger asthma symptoms for many people.<ul><li>Dust is made of tiny particles from pollen, mold, pet dander and hair, dust mites, and pests.</li><li>Dust is everywhere. Dust moves through the air and lands on many areas and objects.</li><li>Some vacuum cleaners can spread dust back into the air.</li></ul>", "<strong>House dust: How to avoid or reduce this trigger</strong><ul><li>Vacuum when the person with asthma is NOT home.</li><li>Avoid getting dust back into the air when emptying the dirt from a vacuum.</li><li>Change filters on central heating and air conditioning systems to help control dust.</li><li>Wipe all surfaces with a damp cloth and vacuum at least once a week.</li></ul>"],
+    "loopAmount": 0,
+    "frameRate": 15,
+    "isTrigger": true,
+
+    "thumbScale": "translate(300,1400) scale(0.8) rotate(-8)",
+    "hint": "When you don't clean, that's where I'll be seen",
+    "hintXValue": 35,
+    "audioFile": "Dust.mp3"
+  }, {
+    "Name": "StuffedAnimals",
+    "bannerText": "Allergen \u2013 Dust Mites (Stuffed Animals)",
+    "postText": ["<strong>Dust Mites</strong> are found in stuffed toys. <ul><li>Dust mites can be an allergy trigger for some people with asthma.</li><li>Dust mites are so tiny they can&rsquo;t be seen with the eye.</li><li>Dust mites live in things made of thick fibers like bedding, carpets, pillows, sofas, rugs, and stuffed toys. </li><li>Dust mites live and multiply in high humidity (high moisture).</li></ul>", " <strong>Dust Mites: How to avoid or reduce this trigger:</strong><ul><li>Reduce clutter. Limit stuffed toys in the home.</li><li>Avoid stuffed toys on a child&rsquo;s bed.</li><li>Use only washable stuffed toys. Wash and dry them weekly. </li><li>Place stuffed toys in a plastic bag and freeze overnight to kill mites.</li><li>Store washable stuffed toys in an airtight container.</li></ul>"],
+    "isTrigger": true,
+    "thumbScale": "translate(50,-150) scale(2.15)",
+    "hint": "I'm soft, cuddly and cute",
+    "hintXValue": 45,
+    "audioFile": "Squeak2.mp3"
+  }, {
+    "Name": "Perfume",
+    "bannerText": "Inhaled Irritants \u2013 Strong Odors (Perfume)",
+    "frameRate": 15,
+    "postText": ["<strong>Aerosol Sprays</strong> and strong odors, like perfume, hairspray, and cleaning products, are commonly used and found in homes.  <ul><li>Aerosol sprays and strong odors are inhaled irritants that trigger asthma symptoms for some people.</li><li>Aerosol sprays and strong odors stay in the air after they are used.</li><li>Aerosol sprays and strong odors are breathed in.</li></ul>", " <strong>Strong Odors: How to avoid or reduce this trigger:</strong><ul><li>Avoid using strong-smelling aerosol sprays indoors.</li><li>Avoid using products that are strongly scented.</li><li>Air out the room where sprays are used.</li></ul>"],
+    "loopAmount": 2,
+    "isTrigger": true,
+    "audioFile": "Spray.mp3",
+    "hint": "I have a strong smell",
+    "hintXValue": 55,
+    "thumbScale": "translate(2300,1325) scale(3.93)"
+  }, {
+    "Name": "PollenCloud",
+    "bannerText": "Allergen \u2013 Pollen (Window)",
+    "audioFile": "pollen.mp3",
+    "postText": ["<strong>Pollens</strong> can blow in from outside. Pollens may trigger asthma symptoms in some people.  <ul><li>Pollens can be in the air, outside as well as inside.</li><li>Pollens can land on surfaces inside the house.</li><li>Pollens can land on the outside and inside of cars.</li></ul>", " <strong>Pollens: How to avoid or reduce this trigger</strong><ul><li>Limit time spent outside during high pollen times. Check online, TV, or sign up for weather and pollen alerts.</li><li>Avoid drying laundry outside.</li><li>Shower and change clothes that were worn outdoors before sitting on furniture or going to bed.</li><li>Keep windows closed, use window filters or air conditioning to filter out pollens.</li></ul>"],
+    "isTrigger": true,
+    "thumbScale": "translate(100,-225) scale(1.4)",
+    "hint": "I\u2019m made by plants and trees, and I can make you sneeze",
+    "hintXValue": 65,
+    "frameRate": 12,
+    "totalAnimationFrames": 5
+
+  }, {
+    "Name": "Carpet",
+    "bannerText": "Allergen \u2013 Dust Mites (Rug)",
+    "postText": ["<strong>Dust Mites </strong>are found in rugs and carpeting and can be an allergy trigger for some people with asthma.<ul><li>Dust mites are so tiny they can&rsquo;t be seen with the eye.</li><li>Dust mites like to live in rugs because they are made of thick fibers.</li><li>Inside the carpet, there are food particles for dust mites to eat.</li></ul>", " <strong>Dust Mites: How to avoid or reduce this trigger</strong><ul><li>Replace rugs with tile or wood that can be damp mopped often.</li><li>If you can&rsquo;t take out the rugs, use a vacuum cleaner with a high efficiency filter (HEPA). </li><li>Vacuum weekly or more often.</li><li>Keep humidity level in home under 50%.</li></ul>"],
+    "isTrigger": true,
+    "thumbScale": "translate(-130,-180) scale(0.8)",
+    "hint": "You walk all over me",
+    "hintXValue": 75,
+    "audioFile": "Rug_VacuumCleaner.mp3"
+  }, {
+    "bannerText": "Not A Trigger",
+    "postText": ["This is an alarm clock. It is <b>not</b> an asthma trigger. You're getting warmer, though!", "This is an alarm clock. It is <b>not</b> an asthma trigger. You're getting warmer, though!"],
+    "Name": "Clock",
+    "audioFile": "alarm.mp3"
+  }, {
+    "bannerText": "Not A Trigger",
+    "postText": [" Isn&#39;t this a pretty poster? It&#39;s not a trigger though. ", "Look up and look down for more triggers! "],
+    "Name": "Poster"
+  }, {
+    "bannerText": "Not A Trigger",
+    "postText": [" These are headphones, they are not an asthma trigger. Keep looking!"],
+    "Name": "Headphones"
+  }, {
+    "bannerText": "Not A Trigger",
+    "postText": [" Laptops are not asthma triggers. Keep looking!", "This is a laptop. Keep looking!"],
+    "Name": "Laptop"
+  }, {
+    "Name": "BookDust",
+    "bannerText": "Allergen \u2013 Dust (Books)",
+    "postText": ["<strong>Dust</strong> is a common allergy trigger for some people with asthma and can cause asthma symptoms or make symptoms worse.<ul><li>Dust is made of many tiny particles from pollens, mold, pet dander and hair, dust mites, and pests.</li><li>Dust is everywhere. Dust moves through the air and lands inside objects.</li><li>Some vacuum cleaners can spread the dust around a room or in the air.</li></ul>", " <strong>House dust: How to avoid or reduce this trigger</strong><ul><li>Reduce clutter to help reduce dust.</li><li>Wipe away dust on all surfaces with a damp cloth.</li><li>Use a vacuum cleaner with a HEPA filter to reduce dust build-up and the amount of dust coming out of the vacuum.</li><li>Avoid getting dust back into the air when emptying the dirt from a vacuum.</li></ul>"],
+    "isTrigger": true,
+    "hint": "Where you don\u2019t clean, that\u2019s where I\u2019ll be seen",
+    "hintXValue": 85,
+    "thumbScale": "translate(-4000,-4500) scale(8)",
+    "audioFile": "Dust.mp3"
+  }, {
+    "bannerText": "Not A Trigger",
+    "postText": ["This is a mirror. It is <b>not</b> an asthma trigger. Keep looking!", "This is a mirror. It is <b>not</b> an asthma trigger. Keep looking!"],
+    "Name": "Mirror"
+  }, {
+    "bannerText": "Not A Trigger",
+    "postText": [" Bubbles is a good fish, The Asthma Free Fish. Keep looking!", " This is Bubbles. Bubbles is a good fish. Bubbles says, &quot;If you need a hint, click the brown boxes.&quot; "],
+    "Name": "Suffy",
+    "loopAmount": 2,
+    "frameRate": 10,
+    "audioFile": "Bubbles.mp3"
+  }, {
+    "bannerText": "Not A Trigger",
+    "postText": [" This is a brush, it is not an asthma trigger. Keep looking!", "This is a brush. It is <b>not</b> an asthma trigger. You 're getting warmer, though!"],
+    "Name": "Hairbrush"
+  }]
+}

@@ -36,7 +36,7 @@ body {
   display: block;
 }
 
-#helpButton: hover {
+#helpButton:hover {
   color: #DBFF33
 }
 
@@ -135,7 +135,7 @@ ul {
   border-color: white;
 }
 
-.highlightPart {
+svg .highlightPart {
   animation: pulsate 2s infinite;
   stroke: rgb(255, 0, 0);
   stroke-width: 1%;
@@ -196,6 +196,7 @@ ul {
 #credits .style4 {
   font-family: " Verdana", sans-serif;
   font-size: 1.4rem;
+  font-style: italic;
 }
 
 #credits .style5 {
@@ -214,6 +215,18 @@ ul {
 #credits .style7 {
   font-family: " Verdana", sans-serif;
   font-size: 2rem;
+}
+
+#credits .style8 {
+  font-family: " Verdana", sans-serif;
+  font-size: 1.8rem;
+}
+#credits .style9 {
+  font-family: " Verdana", sans-serif;
+  font-size: 1.2rem;
+
+
+
 }
 
 /*end of font styling for frontYard */
@@ -251,7 +264,7 @@ ul {
 
 #technicaldesign {
   position: relative;
-  top: -140%;
+  top: -145%;
   opacity: 0;
   text-align: center;
   animation: fadeIn, fadeOut;
@@ -318,17 +331,18 @@ ul {
     /* transform: scale(1); */
     opacity: 1;
   }
+}
 
-  @keyframes transform {
-    from {
-      transform: scale(0);
-    }
+@keyframes transform {
+  from {
+    transform: scale(0);
+  }
 
-    to {
-      transform: scale(1);
-    }
+  to {
+    transform: scale(1);
+  }
 
-    /*
+  /*
     90% {
         opacity:1;
 
@@ -337,14 +351,89 @@ ul {
         opacity:0;
 
     } */
+}
+
+@keyframes crawl {
+  0% {
+    top: 0%
   }
 
-  @keyframes crawl {
-    0% {
-      top: 0%
-    }
-
-    100% {
-      top: -100%
-    }
+  100% {
+    top: -100%
   }
+}
+
+#start {
+  position: absolute;
+  justify-content: center;
+  width: 30%;
+  height: 8%;
+  left: 5%;
+  background-color: white;
+  border-radius: 2rem;
+  padding-top: 2%;
+  border: .1rem solid #6699ff;
+}
+
+#start:hover {
+  background-color: #94d9dc;
+}
+
+#buttonText {
+  color: #6699ff;
+  text-decoration: none;
+}
+
+#buttonText:hover {
+  color: white;
+  text-decoration: none;
+}
+
+#welcomeBody {
+  background-image: url('../img/TileAsthma_1INCH.png');
+  background-repeat: repeat;
+  background-color: #94d9dc;
+
+}
+
+#welcomescreen {
+  margin: 5rem;
+  border-radius: 10rem;
+  background-color: white;
+  position: absolute;
+  height: 80%;
+  width: 90%;
+}
+
+#welcomescreen img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 10%;
+  width: 100%;
+}
+
+#welcomeTitle {
+  font-family: Verdana;
+  font-size: 4rem;
+  text-align: center;
+  margin: 3rem 1rem 1rem 1rem;
+}
+
+#descriptionBox {
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+}
+
+#welcomeDescription {
+  font-family: Verdana;
+  font-size: 2.2rem;
+  text-align: center;
+  margin: 2rem 0rem 2rem 1rem;
+  width: 40%;
+}
+
+#Dollhouse {
+  width: 60%;
+}

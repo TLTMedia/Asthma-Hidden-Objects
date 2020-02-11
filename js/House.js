@@ -30,7 +30,7 @@ class House {
       $('#screen').css({
         opacity: 0
       });
-  $(document).attr("title",`Asthma Trigger House ${this.currentRoom}`);
+  $(document).attr("title",`Asthma Trigger House ${this.currentRoom.replace("%20"," ")}`);
     }).fail(function() {
       window.location = "./#Hallway";
       location.reload();

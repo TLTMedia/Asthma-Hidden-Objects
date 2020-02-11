@@ -35,7 +35,8 @@ class ModalDialog {
       if (!this.room.triggersLeft) {
         this.room.house.currentRoom = this.room.roomInfo.nextRoom;
         this.room.house.isTutorial = false;
-        this.room.house.loadRoom()
+        setTimeout(()=>this.room.house.loadRoom(),1000)
+
 
       }
 

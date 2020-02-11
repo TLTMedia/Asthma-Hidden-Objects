@@ -2771,7 +2771,7 @@
    inkscape:connector-curvature="0" />
 		</g>
 	</g>
-	
+
 	<g
    id="PlayAgain">
 		<path
@@ -2818,7 +2818,7 @@
    height="79.800003"
    id="rect2129" />
 		<a
-   xlink:href="#bedRoom"
+   xlink:href="#Bedroom"
    target="_blank"
    id="a2133">
 			<text
@@ -2828,7 +2828,7 @@
 
 		</a>
 		<a
-   xlink:href="#livingRoom"
+   xlink:href="#Living%20Room"
    target="_blank"
    id="a2137">
 			<text
@@ -2838,7 +2838,7 @@
 
 		</a>
 		<a
-   xlink:href="#livingRoom"
+   xlink:href="#Living%20Room"
    target="_blank"
    id="a2141">
 			<text
@@ -2848,7 +2848,7 @@
 
 		</a>
 		<a
-   xlink:href="#kitchen"
+   xlink:href="#Kitchen"
    target="_blank"
    id="a2145">
 			<text
@@ -2858,7 +2858,7 @@
 
 		</a>
 		<a
-   xlink:href="#bathRoom"
+   xlink:href="#Bathroom"
    target="_blank"
    id="a2149">
 			<text

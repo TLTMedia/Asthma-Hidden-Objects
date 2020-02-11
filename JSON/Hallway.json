@@ -1,0 +1,44 @@
+{
+  "roomImage": "Hallway.svg",
+  "nextRoom": "Bedroom",
+  "completedText": " <br/>Completed",
+  "help": " <br/>help",
+  "targets": [{
+    "Name": "Carpet",
+    "bannerText": "Hallway Tutorial",
+    "yValue": 5,
+    "xValue": 35,
+    "thumbScale": "translate(-3750,-3200) scale(5)",
+    "isTrigger": true,
+    "hint": "You walk all over me",
+    "hintXValue": 23,
+    "audioFile": "Rug_VacuumCleaner.mp3",
+    "preText": [" <h1>Welcome to the Hallway of the Asthma Trigger House.</h1><ul><li>Each of the rooms have unique triggers, and specific information about each. Look around the room to find the triggers, and click on each one. </li> <li>The number of total triggers in each room is located at the upper left corner of the screen, the number will decrease as you find each one.</li> <li>Each trigger has a text box and audio recording with information about the trigger and ways to avoid each. Click on the audio icon to hear an audio version of the information. </li> <li>If you get stuck and need help to find a trigger, click on an empty brown box at the bottom of the screen for a hint to help you find one. </li> <li> Click on the question mark (?) in the upper left corner if you need to review the instructions. </li><li> Turn up the volume on your speakers to hear the sound effects and audio version of the information.</li> <li> Start the practice session in the hallway now.</li> <li><b>Click on the first asthma trigger. (HINT: <em> I can be found lying on the floor </em>)</b></li></ul>"],
+    "postText": [" <p>Great job! You found the 1st Trigger: <b>Dust Mites hidden in the Rug.</b>&nbsp;</p><ul><li>When you click on the trigger in future rooms, you will read information about it in the box.</li><li>When this box closes, the trigger ( the rug ) will go to the bottom of the page in the brown collecting box. This will happen for each trigger going forward.</li><li>The counter in the upper left corner goes down after you find each trigger.</li><li>Look at the number on the upper left corner. How many more triggers need to be found?</li><li>Find the next trigger. (Hint: <em> Green doesn&rsquo;t mean clean!) </em></li></ul>", ""]
+  }, {
+    "Name": "Mold",
+    "bannerText": "Hallway Tutorial",
+    "yValue": 30,
+    "xValue": 20,
+    "width": 10,
+    "isTrigger": true,
+    "thumbScale": "translate(-430,-270) scale(2.5)",
+    "hint": "I grow on moist surfaces",
+    "hintXValue": 50,
+    "audioFile": "Dramatic-reveal-MOLD.mp3",
+    "preText": [" "],
+    "postText": ["<p>Great job! You found the Asthma Trigger:&nbsp; <b>Mold </b>.</p><ul><li>Look at the number on the upper left corner. How many more triggers need to be found?</li><li>You have 1 more Trigger to click on. (Hint: <em>What a pest!<em>)</li></ul>", "<p>&nbsp;&nbsp;Great job! You found the asthma trigger-Mold</p><ul><li><p>In the next rooms you will&nbsp;be learning ways to avoid mold.<li><li>The total number of triggers on the upper left corner has gone down telling you how many more need to be found.</li><li>hen you close this box, the mold will be removed from the room, go into the Collection Box and the counter will go down to 1.</li><li>Now, catch the last trigger before it crawls&nbsp;away.</li>"]
+  }, {
+    "Name": "Rat",
+    "bannerText": "Hallway Tutorial",
+    "yValue": 30,
+    "isTrigger": true,
+    "thumbScale": "translate(-10800,-6651) scale(10)",
+    "hint": "I squeak out of small places",
+    "hintXValue": 77,
+    "audioFile": "Mouse.mp3",
+    "preText": ["", ""],
+    "postText": ["<p>Great job! You found the <b>Pest </b> - a mouse. Mice can cause an allergic reaction in some people. </p><ul><li>You found all 3 triggers.</li><li>When you close this box, the counter will be at 0 and the collection boxes below will be full.</li></ul>", "<ul><li>This room is now free of all asthma triggers - Yay!</li><li>Have fun learning about asthma triggers and ways to avoid them in the next room, the Bedroom.</li><li>Click on the &ldquo;X&rdquo; to close the text box.</li></ul>"],
+    "xValue": 20
+  }]
+}

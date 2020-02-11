@@ -18,6 +18,7 @@ $(window).resize(function () {
     resizeWindow();
 });
 
+$(resizeWindow)
 // Resize the window
 function resizeWindow() {
     // Get window width and height

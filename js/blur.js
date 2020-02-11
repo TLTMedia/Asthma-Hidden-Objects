@@ -21,14 +21,14 @@ injectFilter(){
 removeHighlightCopy() {
   // FOR EVERY OBJECT WITH AN ID THAT CONTAINS THE WORD "COPY", REMOVE THE
   // OBJECT
- 
+
  $("[id$='BlurCopy']").remove();
 }
 
 highlightComponent(id) {
-
+console.log(id)
  var origPart = $(id);
-   
+
  var clonePart = $(id).clone();
   var lastPart = clonePart;
  clonePart.attr("pointer-events", "none");

@@ -45,7 +45,7 @@ makeRoomTypeException()
 
 {
 console.log(this.roomName)
-  if (this.roomName == "Front%20Yard") {
+  if (this.roomName.replace("%20"," ") == "Front%20Yard".replace("%20"," ")) {
 
 setTimeout(()=>this.house.Room.targets[0].animate(false),1000);
 

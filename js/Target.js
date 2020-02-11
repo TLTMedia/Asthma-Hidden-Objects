@@ -10,7 +10,7 @@ class Target {
     this.loopAmount = this.targetInfo.loopAmount || 1;
     this.targetSelector = $(`#roomSVG  #${this.targetInfo.Name}`)
 
-    this.targetSelector.on("click", (evt) => {
+    this.targetSelector.one("click", (evt) => {
 
 
       this.itemClicked(evt)
